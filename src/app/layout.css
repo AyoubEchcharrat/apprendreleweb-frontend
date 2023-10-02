@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    background-color: whitesmoke;
+    position: fixed;
+}
+
+.header:after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(255,235,0,1) 0%, rgba(183,0,255,1) 100%);
+}
+
+.blocConnected * {
+    padding-left: 35px;
+}
+
+.simulate-bloc{
+    width: 226px;
+}

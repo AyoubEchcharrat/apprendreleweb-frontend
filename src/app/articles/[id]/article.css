@@ -1,0 +1,33 @@
+.article h1{
+    padding: 0px 0 75px 0;
+    font-size: 38px;
+}
+.article h2{
+    padding: 40px 0;
+    text-decoration: underline;
+    font-weight: 700;
+}
+.article h3{
+    padding: 20px 0 ;
+    font-weight: 800;
+}
+
+.article {
+    color: #474747;
+    max-width: 1424px;
+    background-color: #f2f2f2;
+    padding: 121px;
+}
+
+.article pre {
+    background-color: #545454;
+    color: whitesmoke;
+    padding: 15px 10px;
+    max-width: fit-content;
+    margin: 5px 0
+}
+
+.article code {
+    background-color: #b3b3b3;
+    color: rgb(0, 0, 0);
+}
