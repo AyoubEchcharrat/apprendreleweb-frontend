@@ -231,14 +231,14 @@
 
 .headlinehome{
   color:#FFDE9D;
-  font-size:50px;
+  font-size:64px;
   z-index: 1;
   margin-bottom: 40px;
   font-family: 'Anonymous Pro', monospace;
 }
 .sublinehome{
   color:#FFDE9D;
-  font-size:15px;
+  font-size:18px;
   z-index: 1;
   font-family: 'IBM Plex Mono', monospace;
 }
@@ -257,7 +257,7 @@
   border-top: dashed black 1px;
   width: 170px;
   position: absolute;
-  top: 195px;
+  top: 191px;
   left: 10px;
   font-size: 8px;
   display: flex;
@@ -267,7 +267,7 @@
 }
 .lineanimationy1{
   border-left: dashed black 1px;
-  height: 172px;
+  height: 165px;
   position: absolute;
   top: 0;
   left: 190px;
