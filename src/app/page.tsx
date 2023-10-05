@@ -1,6 +1,5 @@
 "use client"
 
-require('dotenv').config()
 import styles from './page.module.css'
 import Image from 'next/image'
 import { useEffect,useState } from 'react'
@@ -42,11 +41,12 @@ export default function Page() {
         <div className={styles.lineanimationx}>190px</div>
         <div className={styles.lineanimationy1}>172px</div>
         <div style={movingLineY2}>{movingLineY2.height}</div>
-        <Image className={styles.catimagehome} src="/cat.png" width={467} height={441} alt="subtile draw of cat" />
+        <Image className={styles.catimagehome} priority={true} src="/cat.png" width={467} height={441} alt="subtile draw of cat" />
         <p className={styles.headlinehome}>Cultivez votre curiosité.\n</p>
         <p className={styles.sublinehome}> {subline()} </p>
       </div>
 
+      
     </main>
   )
 }

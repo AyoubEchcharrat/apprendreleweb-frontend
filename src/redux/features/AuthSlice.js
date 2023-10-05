@@ -25,7 +25,6 @@ export const authSlice = createSlice({
     initialState,
     reducers: {
         logout: (state) => {
-            console.log(userToken)
             localStorage.setItem('user',JSON.stringify({userToken : null}))
             state.loading = false
             state.userProfile = {
@@ -42,7 +41,6 @@ export const authSlice = createSlice({
     extraReducers: builder => {
         builder.addCase(loginUser.pending, handlePendingEvent),
         builder.addCase(loginUser.fulfilled, (state, { payload }) => {
-            console.log(payload)
             state.loading = false
             state.userProfile.email = payload.email
             state.userToken = payload.userToken

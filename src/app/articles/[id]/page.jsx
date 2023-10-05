@@ -1,5 +1,6 @@
 import "./article.css"
 import styles from "../../page.module.css"
+import GetModifAndDeletIfConnected from '@/components/article/GetModifAndDeletIfConnected'
 
 async function getArticle(id) {
     const res = await fetch(`${process.env.PROD_URL}api/articles/${id}?timestamp=${Date.now()}`)
@@ -19,6 +20,7 @@ export default async function page({params}) {
 
     return (
         <main className={styles.main}>
+            <GetModifAndDeletIfConnected/>
             <div className='article' dangerouslySetInnerHTML={createMarkup()} /> 
         </main>
     )

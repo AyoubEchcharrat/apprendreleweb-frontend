@@ -23,8 +23,6 @@ type unArticle = {
 
 export default async function Articles() {
     const data = await getAllArticles()
-    console.log("second CL ")
-    console.log(data)
     return (
       <div>
           <ul>

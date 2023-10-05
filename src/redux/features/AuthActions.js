@@ -17,7 +17,6 @@ export const loginUser = createAsyncThunk(
                 { email, password },
                 config
             )
-            console.log(data)
             const defineUser = {
                 userToken:data.data.userToken
             }

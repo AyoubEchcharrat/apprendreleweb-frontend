@@ -21,7 +21,6 @@ const ConnexionPage = () => {
     useEffect(()=> {
         dispatch(refreshUserDatas())
         if(userToken){
-            console.log(userToken)
             router.push('/')
         }
     },[dispatch,userToken,router])

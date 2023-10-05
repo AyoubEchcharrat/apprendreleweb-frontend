@@ -5,7 +5,7 @@ import Link from 'next/link'
 const inter = Inter({ subsets: ['latin'] })
 import './layout.css'
 import LayoutConnexion from './LayoutConnexion'
-
+import Image from 'next/image'
 import { Providers } from "@/redux/provider";
 
 
@@ -29,7 +29,7 @@ export default function RootLayout({
         <Providers>
           <header className='header'>
             <Link className='simulate-bloc' href={'/articles'}>Articles</Link>
-            <Link href={'/'}>Apprendre Le Web</Link>
+            <Link href={'/'}>{/*  <Image src="/ALW.png" alt="logo d'Apprendre le Web" width={50} height={40} />  */}Apprendre Le Web</Link>
             <LayoutConnexion/>
           </header>
           {children}

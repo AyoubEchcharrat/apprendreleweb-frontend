@@ -8,7 +8,6 @@ import axios from "axios";
 import { useAppSelector } from "@/redux/hooks";
 
 async function sendArticle(article,userToken) {
-  console.log(article)
   try{
     const config = {
       headers: { 
@@ -34,7 +33,6 @@ export default function App() {
   const log = () => {
     if (editorRef.current) {
         const decoded = decode(editorRef.current.getContent())
-        console.log(decoded);
         const wordsP1 = decoded.split('<h1>')[1];
         const title = wordsP1.split('</h1>')[0];
         const article = {article : decoded, title : title}
