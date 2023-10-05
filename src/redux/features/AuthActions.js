@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
-const backendURL = "https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/"
+const backendURL = "https://apprendreleweb-backend-61895b6b6b58.herokuapp.com"
 
 export const loginUser = createAsyncThunk(
     'auth/login',
