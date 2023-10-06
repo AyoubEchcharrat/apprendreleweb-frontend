@@ -15,7 +15,7 @@ async function sendArticle(article,userToken) {
       }
     }
     const data = await axios.post(
-      `http://localhost:4000/api/articles/`,
+      `https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/articles/`,
       article,
       config
       )

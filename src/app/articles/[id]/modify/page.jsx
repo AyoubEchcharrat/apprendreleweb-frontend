@@ -6,6 +6,31 @@ import { useEffect, useState } from "react"
 import { useAppSelector } from "@/redux/hooks";
 import axios from "axios";
 
+
+async function sendModif(article,userToken,currentArticleId){
+    try{
+      const config = {
+        headers: { 
+          'Authorization': 'Bearer ' + userToken
+        }
+      }
+      const data = await axios.put(
+        `https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/articles/${currentArticleId}`,
+        article,
+        config
+        )
+      return data
+    }
+    catch (error){
+      console.log({erreur : {error}})
+    }
+}
+
+
+
+
+
+
 export default function Modify() {
     const [data, setData] = useState(null)
     const [isLoading, setLoading] = useState(true)
@@ -33,22 +58,7 @@ export default function Modify() {
         const wordsP1 = decoded.split('<h1>')[1];
         const title = wordsP1.split('</h1>')[0];
         const article = {article : decoded, title : title}
-        try{
-            const config = {
-            headers: { 
-                'Authorization': 'Bearer ' + userToken
-            }
-            }
-            const data = await axios.put(
-            `${URL}/api/articles/${currentArticleId}`,
-            article,
-            config
-            )
-            return data
-        }
-        catch (error){
-            console.log({erreur : {error}})
-        }
+        sendModif(article,userToken,currentArticleId)
     }
 
     if (isLoading) return <p>Loading...</p>
