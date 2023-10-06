@@ -6,7 +6,7 @@ import Link from "next/link"
 async function getAllArticles() {
     try{
       const data = await axios.get(
-        `${process.env.PROD_URL}api/articles/?timestamp=${Date.now()}`
+        `${process.env.PROD_URL}api/articles/`
         )
        return data.data
     }
