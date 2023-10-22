@@ -1,5 +1,6 @@
 .list-articles{
     margin: 20px auto;
-    max-width: 1144px;
+    max-width: 1144px !important;
+    display: flex;
     flex-direction: column-reverse;
 }
