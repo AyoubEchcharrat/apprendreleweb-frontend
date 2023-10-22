@@ -6,6 +6,7 @@
     padding: 20px;
     background-color: whitesmoke;
     position: fixed;
+    z-index: 5;
 }
 
 .header:after {

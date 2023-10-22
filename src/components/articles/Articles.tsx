@@ -1,5 +1,5 @@
 import Link from "next/link"
-import "./articles.css"
+import "./Articles.css"
 
 async function getArticles() {
   const res = await fetch(`http://localhost:4000/api/articles/?timestamp=${Date.now()}`)
@@ -22,14 +22,12 @@ type unArticle = {
 
 export default async function Articles() {
     const data = await getArticles()
-    function createMarkupContent() {
-      return {__html: data.content};
-    }
+
     return (
       <div>
           <div className="list-articles">
             {data.map((article:unArticle,index:number) => 
-              <Link href={`articles/${article._id}`}>
+              <Link key={`${index}-article-pageArticles`} href={`articles/${article._id}`}>
                 <div className="container_articles">
                   <div className="image_articles">
                     <img src={article.imageurl} alt="" />

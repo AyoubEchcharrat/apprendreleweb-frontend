@@ -2,9 +2,10 @@
 
 import styles from "../../../page.module.css"
 import { usePathname, useRouter } from "next/navigation"
-import { useEffect, useReducer, useState } from "react"
+import { useEffect, useState } from "react"
 import { useAppSelector } from "@/redux/hooks";
 import axios from "axios";
+import '../../../rediger/rediger.css'
 
 
 async function sendModif(article,userToken,currentArticleId){
@@ -98,35 +99,37 @@ export default function Modify() {
       })
     }
     
-    if(loading) return <div className={styles.loadingEffect}></div> 
-    if (!data) return <p>No profile data</p>
+    if(loading) return <main className={styles.main}><div className={styles.loadingEffect}></div> </main>
+    if (!data) return <main className={styles.main}><p>No profile data</p></main>
     return (
         <main className={styles.main} >
           {modified ? <div>Article modifié. </div>: 
           <div>
-            <form onSubmit={handleSubmit}>
-              <div>
+            <form className='form' onSubmit={handleSubmit}>
+            <div className='column'>
                 <label htmlFor="title">Titre :</label>
                 <input type="text" id="title" name="title" required defaultValue={data.title}/>
               </div>
-              <div>
+              <div className='column'>
                 <label htmlFor="content">Contenu :</label>
                 <textarea id="content" name="content" rows="4" required defaultValue={data.content}></textarea>
               </div>
-              <div>
+              <div className='column'>
                 <label htmlFor="tags">Tags :</label>
                 <input type="text" id="tags" name="tags" defaultValue={data.tags} />
               </div>
-              <div>
+              <div className='column fileloader'>
                 <label htmlFor="imageurl">Image :</label>
                 <input type="file" id="imageurl" name="imageurl"  accept="image/*"/>
               </div>
-              <div>
+              <div className='column'>
                 <label htmlFor="date">Date :</label>
                 <input type="date" id="date" name="date" defaultValue={date} />
               </div>
-              <button type="submit">Modifier l'article</button>
-              <button onClick={() => handleDelete()}>SUPPRIMER L'ARTICLE</button>
+              <div>
+                <button className="button-send_form"  type="submit">Modifier l'article</button>
+                <button className="button-delete_form" onClick={() => handleDelete()}>SUPPRIMER L'ARTICLE</button>
+              </div>
             </form>
           </div>
           }

@@ -19,9 +19,8 @@ export default async function LastArticles() {
     return (
       <div>
           <div className="list-articles">
-          <p>Derniers Articles :</p>
             {data.map((article,index) => 
-              <Link href={`articles/${article._id}`}>
+              <Link key={`${index}-article-home`} href={`articles/${article._id}`}>
                 <div className="container_articles">
                   <div className="image_articles">
                     <img src={article.imageurl} alt="" />
@@ -34,6 +33,7 @@ export default async function LastArticles() {
                 </div>
               </Link>
             )}
+          <p className="section_title" >Derniers Articles :</p>
           </div>
        </div>
     )

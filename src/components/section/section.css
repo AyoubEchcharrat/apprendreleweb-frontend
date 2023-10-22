@@ -1,0 +1,18 @@
+.section_container{
+    margin: 60px auto;
+    max-width: 1144px;
+}
+
+.section_title {
+    font-style: italic;
+    color: #b22323;
+    font-family: 'Anonymous Pro';
+    font-size: 17px;
+    margin: 15px 0px;
+}
+
+.section_response {
+    font-size: 15px;
+    margin: 20px 0px;
+    text-align: justify;
+}
