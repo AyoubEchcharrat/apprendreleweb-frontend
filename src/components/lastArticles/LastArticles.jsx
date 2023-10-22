@@ -1,6 +1,6 @@
 import Link from "next/link"
 import "./LastArticles.css"
-import "../articles/Articles.css"
+import "../articles/articles.css"
 
 
 async function getArticles() {

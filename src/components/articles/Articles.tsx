@@ -1,5 +1,5 @@
 import Link from "next/link"
-import "./Articles.css"
+import "./articles.css"
 
 async function getArticles() {
   const res = await fetch(`http://localhost:4000/api/articles/?timestamp=${Date.now()}`)
