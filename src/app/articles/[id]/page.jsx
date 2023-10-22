@@ -4,7 +4,7 @@ import Link from "next/link"
 import GetModifAndDeletIfConnected from '@/components/article/GetModifAndDeletIfConnected'
 
 async function getArticle(id) {
-    const res = await fetch(`http://localhost:4000/api/articles/${id}?timestamp=${Date.now()}`)
+    const res = await fetch(`https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/articles/${id}?timestamp=${Date.now()}`)
     if (!res.ok) {
       throw new Error('Failed to fetch data')
     }

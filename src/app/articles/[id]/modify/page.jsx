@@ -16,7 +16,7 @@ async function sendModif(article,userToken,currentArticleId){
         }
       }
       const data = await axios.put(
-        `http://localhost:4000/api/articles/${currentArticleId}`,
+        `https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/articles/${currentArticleId}`,
         article,
         config
         )
@@ -34,7 +34,7 @@ async function deleteArticle(userToken,currentArticleId){
         }
       }
       const data = await axios.delete(
-        `http://localhost:4000/api/articles/${currentArticleId}`,
+        `https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/articles/${currentArticleId}`,
         config
         )
       return data
@@ -57,7 +57,7 @@ export default function Modify() {
     const pathname = usePathname()
     const currentArticleId = pathname.split('/')[2]
     const router = useRouter()
-    const URL = "http://localhost:4000/"/* 'https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/' */
+    const URL = "https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/"
     const date = new Date().toISOString().split('T')[0]
     useEffect(()=> {
         fetch(`${URL}api/articles/${currentArticleId}`)
