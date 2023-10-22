@@ -28,8 +28,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers>
           <header className='header'>
-            <Link className='simulate-bloc' href={'/articles'}>Articles</Link>
-            <Link href={'/'}>{/*  <Image src="/ALW.png" alt="logo d'Apprendre le Web" width={50} height={40} />  */}Apprendre Le Web</Link>
+            <div className="simulate-bloc">
+              <Link className='articles_link' href={'/articles'}>Articles</Link>
+            </div>
+            <Link className='title' href={'/'}><span>A</span>pprendre <span>L</span>e <span>W</span>eb</Link>
             <LayoutConnexion/>
           </header>
           {children}

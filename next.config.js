@@ -8,5 +8,5 @@ module.exports = {
         ignoreBuildErrors: true,
       },
     pageExtensions: ['jsx', 'js', 'ts', 'tsx'], // Incluez les extensions de fichiers de vos pages
-    // Autres configurations personnalisées...
+    generateEtags: false,
   };

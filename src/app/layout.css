@@ -1,6 +1,7 @@
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     padding: 20px;
     background-color: whitesmoke;
@@ -23,4 +24,21 @@
 
 .simulate-bloc{
     width: 226px;
+}
+
+.title {
+    font-size: 20px;
+    font-family: 'Ubuntu';
+}
+
+.title span {
+    background-color: #064493;
+    color: white;
+}
+
+.articles_link {
+    padding: 9px 20px;
+    background: black;
+    color: white;
+    font-size: 14px;
 }

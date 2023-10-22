@@ -1,11 +1,13 @@
 "use client"
 
 import styles from "../page.module.css"
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import {decode} from 'html-entities';
 import axios from "axios";
 import { useAppSelector } from "@/redux/hooks";
+import { Router } from "next/router";
+import { useRouter } from "next/navigation";
 
 async function sendArticle(article,userToken) {
   try{
@@ -15,7 +17,8 @@ async function sendArticle(article,userToken) {
       }
     }
     const data = await axios.post(
-      `https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/articles/`,
+      /* `https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/articles/`, */
+      `http://localhost:4000/api/articles/`,
       article,
       config
       )
@@ -29,41 +32,73 @@ async function sendArticle(article,userToken) {
 
 export default function App() {
   const userToken = useAppSelector((state) => state.authReducer.userToken)
-  const editorRef = useRef(null);
-  const log = () => {
-    if (editorRef.current) {
-        const decoded = decode(editorRef.current.getContent())
-        const wordsP1 = decoded.split('<h1>')[1];
-        const title = wordsP1.split('</h1>')[0];
-        const article = {article : decoded, title : title}
-        sendArticle(article,userToken)
+  const [loading,setLoading] = useState(false)
+  const [error,setError] = useState(false)
+  const router = useRouter()
+
+  const handleSubmit = async (e) => {
+    setLoading(true)
+    e.preventDefault()
+    const title = e.target.elements.title.value
+    const content = e.target.elements.content.value
+    const tags = e.target.elements.tags.value.split(' ')
+    const imageurl = e.target.elements.imageurl.files[0]
+    const date = new Date().toISOString().split('T')[0]
+    const formData = new FormData()
+    formData.append("title",title)
+    formData.append("content",content)
+    formData.append("tags",tags)
+    formData.append("imageurl",imageurl)
+    formData.append("date", date)
+    sendArticle(formData,userToken)
+    .then(() => {
+      setLoading(false)
+      window.location.assign('/articles')
+    },
+    (error) => { 
+      setLoading(false)
+      setError(true)
+      console.log({error})
     }
-  };
+    )
+  }
 
   return (
+
     <main className={styles.main}>
-      <Editor
-        apiKey={process.env.NEXT_PUBLIC_KEY_TINY_CLOUD}
-        onInit={(evt, editor) => editorRef.current = editor}
-        initialValue="<p>This is the initial content of the editor.</p>"
-        init={{
-          height: 500,
-          menubar: true,
-          plugins: [
-            'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
-            'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
-            'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount',
-            'code',"charmap",'tinymcespellchecker'
-          ],
-          spellchecker_language: 'fr',
-          toolbar: 'undo redo | blocks | ' +
-            'bold italic forecolor | alignleft aligncenter ' +
-            'alignright alignjustify | bullist numlist outdent indent | ' +
-            'removeformat | help' + 'code'+'charmap',
-          content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-        }}
-      />
-      <button onClick={log}>Log editor content</button>
+      {error ? <div> Une erreur est surevenu ... </div> 
+      :
+      <div>
+        {loading ? 
+          <div className={styles.loadingEffect}></div> 
+          :
+          <form onSubmit={handleSubmit}>
+            <div>
+              <label htmlFor="title">Titre :</label>
+              <input type="text" id="title" name="title" required />
+            </div>
+            <div>
+              <label htmlFor="content">Contenu :</label>
+              <textarea id="content" name="content" rows="4" required></textarea>
+            </div>
+            <div>
+              <label htmlFor="tags">Tags :</label>
+              <input type="text" id="tags" name="tags" />
+            </div>
+            <div>
+              <label htmlFor="imageurl">Image :</label>
+              <input type="file" id="imageurl" name="imageurl"  accept="image/*"/>
+            </div>
+            <div>
+              <label htmlFor="date">Date :</label>
+              <input type="date" id="date" name="date" defaultValue={date} />
+            </div>
+            <button type="submit">Créer l'article</button>
+          </form>
+        }
+      </div>
+      }
+
     </main>
   );
 }

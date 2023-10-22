@@ -17,7 +17,6 @@ export default function GetModifAndDeletIfConnected() {
     },[])
 
     function modify() {
-        console.log(pathname)
         router.push(`${pathname}/modify`)
     }
 

@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap');
+
+.list-articles {
+  display: flex;
+  flex-direction: column;
+  max-width: 1414px;
+}
+
+.container_articles {
+  display: flex;
+  align-items: center;
+  background-color: #d2d6da;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 0 30px 0 0;
+  box-shadow: 0px 7px 17px -14px #190728;
+  border-right: #414141 6px solid;
+}
+
+.image_articles {
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px 0 0 10px;
+  margin-right: 20px;
+}
+
+.image_articles img  {
+  height: 160%;
+}
+
+.text-container_articles {
+  max-width: 80%;
+  margin-left: 10px;
+}
+
+.title_articles {
+  font-size: 18px;
+  margin: 10px 0;
+  font-family: 'Ubuntu', sans-serif;
+  color: #3d3d3d;
+}
+
+.content_articles {
+  color: #606060;
+  font-size: 13px;
+}
+
+.tags_articles {
+  margin: 10px;
+  padding: 4px 10px;
+  background: red;
+}
+
+.tags_articles {
+  margin: 8px 0 15px 0;
+  padding: 3px 13px 5px 13px;
+  background: #525795;
+  max-width: fit-content;
+  color: white;
+  border-radius: 25px;
+  font-size: 13px;
+}
