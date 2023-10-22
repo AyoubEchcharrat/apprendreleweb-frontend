@@ -91,7 +91,7 @@ export default function App() {
               <label htmlFor="date">Date :</label>
               <input type="date" id="date" name="date" defaultValue={date} />
             </div>
-            <button className="button-send_form" type="submit">Créer l'article</button>
+            <button className="button-send_form" type="submit">Créer l&apos;article</button>
           </form>
         }
       </div>

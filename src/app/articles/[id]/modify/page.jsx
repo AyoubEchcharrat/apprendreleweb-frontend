@@ -127,8 +127,8 @@ export default function Modify() {
                 <input type="date" id="date" name="date" defaultValue={date} />
               </div>
               <div>
-                <button className="button-send_form"  type="submit">Modifier l'article</button>
-                <button className="button-delete_form" onClick={() => handleDelete()}>SUPPRIMER L'ARTICLE</button>
+                <button className="button-send_form"  type="submit">Modifier l&apos;article</button>
+                <button className="button-delete_form" onClick={() => handleDelete()}>SUPPRIMER L&apos;ARTICLE</button>
               </div>
             </form>
           </div>
