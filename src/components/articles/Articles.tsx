@@ -48,7 +48,7 @@ export default async function Articles() {
       console.error("Une erreur s'est produite lors de la récupération des articles:", error);
       return (
         <div>
-          <p>Ooops ... Une erreur s'est produite lors de la récupération des données.</p>
+          <p>Ooops ... Une erreur s&apos;est produite lors de la récupération des données.</p>
         </div>
       );
     }

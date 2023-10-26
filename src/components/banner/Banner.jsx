@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useEffect,useState } from 'react'
 
 export default function Banner() {
+  const [screenSize,setScreenSize] = useState(1600)
   const [valeur, setValeur] = useState(30)
   const valueY2 = 20
 
@@ -34,7 +35,17 @@ export default function Banner() {
       alignItems: "center",
       padding: "4px",
   }
-  const screenSize = window.innerWidth
+
+  useEffect(() => {
+    const handleResize = () => {
+        setScreenSize(window.innerWidth)
+    }
+    window.addEventListener('resize',handleResize)
+    return () => {
+        window.removeEventListener('resize',handleResize)
+    }
+  },[])
+
   return (
       <div>
         { screenSize > 1323 ? 

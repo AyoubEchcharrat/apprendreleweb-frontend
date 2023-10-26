@@ -11,7 +11,7 @@ export default function LayoutConnexion(){
     const dispatch = useAppDispatch();
     const [isClient, setIsClient] = useState(false)
     const [isOpenMenu,setIsOpenMenu] = useState(false)
-    const [screenSize,setScreenSize] = useState(window.innerWidth)
+    const [screenSize,setScreenSize] = useState(1600)
     useEffect(() => {
         if(dataLoad === false) {
             dispatch(() => refreshUserDatas())
@@ -60,13 +60,13 @@ export default function LayoutConnexion(){
                     <div className="background_menu">
                         {isClient && userToken == null ? 
                         <div className="blocConnected">
-                            <Link onClick={() => handleMenu(false)} href={'/'}>Page d'accueil</Link>
+                            <Link onClick={() => handleMenu(false)} href={'/'}>Page d&apos;accueil</Link>
                             <Link onClick={() => handleMenu(false)} href={'/articles'}>Articles</Link>
                             <Link onClick={() => handleMenu(false)} className='simulate-bloc' href={'/connexion'}>Connexion</Link>
                         </div>
                             :
                         <div className="blocConnected">
-                            <Link onClick={() => handleMenu(false)} href={'/'}>Page d'accueil</Link>
+                            <Link onClick={() => handleMenu(false)} href={'/'}>Page d&apos;accueil</Link>
                             <Link onClick={() => handleMenu(false)} href={'/articles'}>Articles</Link>
                             <Link onClick={() => handleMenu(false)} href={'/rediger'}>Rédiger</Link>
                             <Link href='/' 
