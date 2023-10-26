@@ -1,7 +1,7 @@
 import Link from "next/link"
 import "./LastArticles.css"
 import "../articles/articles.css"
-
+import ResumeArticles from './ResumeArticles.jsx'
 
 async function getArticles() {
   const res = await fetch(`https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/articles/?timestamp=${Date.now()}`, { cache: 'no-store' })
@@ -12,29 +12,36 @@ async function getArticles() {
   return res.json()
 }
 
-
 export default async function LastArticles() {
-    const AllData = await getArticles()
-    const data = AllData.slice(-3)
-    return (
-      <div>
-          <div className="list-articles">
-            {data.map((article,index) => 
-              <Link key={`${index}-article-home`} href={`articles/${article._id}`}>
-                <div className="container_articles">
-                  <div className="image_articles">
-                    <img src={article.imageurl} alt="" />
+    try{
+      const AllData = await getArticles()
+      const data = AllData.slice(-3).reverse()
+      return (
+          <div>
+            <div className="list-lastarticles">
+            <p className="section_title" >Derniers Articles :</p>
+              {data.map((article,index) => 
+                <Link key={`${index}-article-home`} href={`articles/${article._id}`}>
+                  <div className="container_articles">
+                    <div className="image_articles">
+                      <img src={article.imageurl} alt="" />
+                    </div>
+                    <div className="text-container_articles">
+                      <h2 className="title_articles">{article.title}</h2>
+                      <ResumeArticles article={article} />
+                      <div className="tags_articles">{article.tags}</div>
+                    </div>
                   </div>
-                  <div className="text-container_articles">
-                    <h2 className="title_articles">{article.title}</h2>
-                    <div className="content_articles" dangerouslySetInnerHTML={{__html: article.content.split('<p>').slice(1).join(" ").split('</p>').slice(0,1)}}/>
-                    <div className="tags_articles">{article.tags}</div>
-                  </div>
-                </div>
-              </Link>
-            )}
-          <p className="section_title" >Derniers Articles :</p>
+                </Link>
+              )}
+            </div>
           </div>
-       </div>
-    )
+      )
+    }catch(error){
+      console.log("Une erreur est survenue lors du chargement des données : ",error);
+      return(
+        <div>Ooops ... Une erreur est survenue lors du chargement des données.</div>
+      )
+    }
+    
 }

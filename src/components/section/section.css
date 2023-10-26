@@ -15,4 +15,12 @@
     font-size: 15px;
     margin: 20px 0px;
     text-align: justify;
+    line-height: 1.7;
 }
+
+@media screen and (max-width:1200px) {
+    .section_container{
+        margin: 60px 30px;
+    }
+    
+  }

@@ -64,3 +64,34 @@
   border-radius: 25px;
   font-size: 13px;
 }
+
+@media screen and (max-width:930px) and (min-width:760px){
+  .image_articles {
+    height: 200px;
+    width: 200px;
+  }
+  .text-container_articles {
+    width: 65%;
+  }
+}
+
+@media screen  and (max-width:760px){
+  .image_articles {
+    width: 200px;
+  }
+  .text-container_articles {
+    width: 65%;
+  }
+}
+@media screen  and (max-width:460px){
+  .title_articles{
+    font-size: 12px;
+  }
+  .container_articles{
+    padding: 0 10px 0 0;
+  }
+  .image_articles{
+    height: 110px;
+    width: 130px;
+  }
+}

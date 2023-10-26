@@ -34,15 +34,26 @@ export default function Banner() {
       alignItems: "center",
       padding: "4px",
   }
-
+  const screenSize = window.innerWidth
   return (
-      <div className={styles.firstcontenthome}>
-        <div className={styles.lineanimationx}>190px</div>
-        <div className={styles.lineanimationy1}>172px</div>
-        <div style={movingLineY2}>{movingLineY2.height}</div>
-        <Image className={styles.catimagehome} priority={true} src="/cat.png" width={467} height={441} alt="subtile draw of cat" />
-        <p className={styles.headlinehome}>Cultivez votre curiosité.\n</p>
-        <p className={styles.sublinehome}> {subline()} </p>
+      <div>
+        { screenSize > 1323 ? 
+          <div className={styles.firstcontenthome}>
+            <div className={styles.lineanimationx}>190px</div>
+            <div className={styles.lineanimationy1}>172px</div>
+            <div style={movingLineY2}>{movingLineY2.height}</div>
+            <Image className={styles.catimagehome} priority={true} src="/cat.png" width={467} height={441} alt="subtile draw of cat" />
+            <p className={styles.headlinehome}>Cultivez votre curiosité.\n</p>
+            <p className={styles.sublinehome}> {subline()} </p>
+          </div>
+          :
+          <div className={styles.firstcontenthome}>
+            <Image className={styles.catimagehome} priority={true} src="/cat.png" width={180} height={160} alt="subtile draw of cat" />
+            <p className={styles.headlinehome}>Cultivez votre curiosité.\n</p>
+            <p className={styles.sublinehome}> {subline()} </p>
+          </div>
+        }
       </div>
+     
     )
 }

@@ -1,6 +1,19 @@
-.list-articles{
+.list-lastarticles{
     margin: 20px auto;
-    max-width: 1144px !important;
+    max-width: 1144px;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 }
+
+@media screen and (max-width:1200px) {
+    .list-lastarticles{
+        margin: 20px 30px;
+    }
+}
+@media screen and (max-width:460px) {
+    .list-lastarticles{
+        margin: 20px 8px;
+    }
+}
+
+

@@ -10,7 +10,7 @@ const BlogIndex:NextPage = () => {
     return (    
     <main className={styles.main}>
         <h1 className={styles.h1}>Tous nos articles :</h1>
-        <Suspense fallback={"...Loading"}>
+        <Suspense fallback={<div className={styles.loadingContainer}><div className={styles.loadingEffect}></div></div>}>
             <Articles/>
         </Suspense>
         

@@ -14,10 +14,6 @@ export const metadata: Metadata = {
   description: 'Apprenez le web !',
 }
 
-
-
-
-
 export default function RootLayout({
   children,
 }: {
