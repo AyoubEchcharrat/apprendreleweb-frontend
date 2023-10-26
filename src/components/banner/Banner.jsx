@@ -37,6 +37,7 @@ export default function Banner() {
   }
 
   useEffect(() => {
+    setScreenSize(window.innerWidth)
     const handleResize = () => {
         setScreenSize(window.innerWidth)
     }

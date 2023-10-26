@@ -25,6 +25,7 @@ export default function LayoutConnexion(){
     } 
 
     useEffect(() => {
+        setScreenSize(window.innerWidth)
         const handleResize = () => {
             setScreenSize(window.innerWidth)
         }

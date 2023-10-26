@@ -6,6 +6,7 @@ export default function ResumeArticles({article}) {
     const [screenSize,setScreenSize] = useState(1600)
 
     useEffect(()=>{
+        setScreenSize(window.innerWidth)
         const handleResize = () => {
             setScreenSize(window.innerWidth)
         }
@@ -14,7 +15,7 @@ export default function ResumeArticles({article}) {
             window.removeEventListener("resize",handleResize)
         })
     },[])
-    
+
     return (
         <div>
             {screenSize > 760 && 
