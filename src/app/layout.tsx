@@ -25,9 +25,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <Head>
-        <meta name="google-site-verification" content="x2PAHNdJdspaIbF_yDVwJA57LJpxiiQy6ENeOq6ndYE" />
-      </Head>
       <body className={inter.className}>
         <Providers>
           <header className='header'>
