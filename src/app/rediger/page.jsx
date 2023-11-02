@@ -42,12 +42,8 @@ export default function App() {
     const imageurl = e.target.elements.imageurl.value
 
     const formData = new FormData()
-    formData.append("title",title)
-    formData.append("content",content)
-    formData.append("tags",tags)
-    formData.append("imageurl",imageurl)
-    formData.append("date", date)
-    sendArticle(formData,userToken)
+    const objectArticle = {title,content,tags,imageurl,date}
+    sendArticle(objectArticle,userToken)
     .then(() => {
       setLoading(false)
       window.location.assign('/articles')
