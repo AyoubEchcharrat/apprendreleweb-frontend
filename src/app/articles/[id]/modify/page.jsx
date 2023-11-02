@@ -59,7 +59,7 @@ export default function Modify() {
     const router = useRouter()
     const URL = "https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/"
     const date = new Date().toISOString().split('T')[0]
-    
+
     useEffect(()=> {
         fetch(`${URL}api/articles/${currentArticleId}`)
         .then((res) => res.json())
@@ -72,17 +72,14 @@ export default function Modify() {
 
     const handleSubmit = async (e) => {
       e.preventDefault()
-      const formData = new FormData()
       const title = e.target.elements.title.value
       const content = e.target.elements.content.value
       const tags = e.target.elements.tags.value.split(' ')
       const imageurl = e.target.elements.imageurl.value
-      formData.append("imageurl",imageurl)
-      formData.append("title",title)
-      formData.append("content",content)
-      formData.append("tags",tags)
-      formData.append("date", date)
-      sendModif(formData,userToken,currentArticleId)
+      
+      const objectArticle = {title,content,tags,imageurl,date}
+
+      sendModif(objectArticle,userToken,currentArticleId)
       .then(()=> {  
         setModified(true)  
         window.location.assign('/articles')
