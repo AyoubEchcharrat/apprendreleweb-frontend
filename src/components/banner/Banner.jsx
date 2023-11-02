@@ -48,7 +48,7 @@ export default function Banner() {
   },[])
 
   return (
-      <div>
+      <div style={{background:' white'}}>
         { screenSize > 1323 ? 
           <div className={styles.firstcontenthome}>
             <div className={styles.lineanimationx}>190px</div>

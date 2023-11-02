@@ -1,5 +1,6 @@
 import Link from "next/link"
 import "./articles.css"
+import ResumeArticles from '../ResumeArticles.jsx'
 
 async function getArticles() {
   const res = await fetch(`https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/articles/?timestamp=${Date.now()}`,{next: { revalidate: 300 }})
@@ -22,7 +23,8 @@ type unArticle = {
 
 export default async function Articles() {
     try{
-      const data = await getArticles()
+      const reversedata = await getArticles()
+      const data = reversedata.reverse()
       return (
         <div>
             <div className="list-articles">
@@ -34,7 +36,7 @@ export default async function Articles() {
                     </div>
                     <div className="text-container_articles">
                       <h2 className="title_articles">{article.title}</h2>
-                      <div className="content_articles"  dangerouslySetInnerHTML={{__html: article.content.split('<p>').slice(1).join(" ").split('</p>').slice(0,1)}}/>
+                      < ResumeArticles article={article} />
                       <div className="tags_articles">{article.tags}</div>
                     </div>
                   </div>

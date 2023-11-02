@@ -1,7 +1,7 @@
 import Link from "next/link"
 import "./LastArticles.css"
 import "../articles/articles.css"
-import ResumeArticles from './ResumeArticles.jsx'
+import ResumeArticles from '../ResumeArticles.jsx'
 
 async function getArticles() {
   const res = await fetch(`https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/articles/?timestamp=${Date.now()}`, { cache: 'no-store' })
@@ -28,7 +28,7 @@ export default async function LastArticles() {
                     </div>
                     <div className="text-container_articles">
                       <h2 className="title_articles">{article.title}</h2>
-                      <ResumeArticles article={article} />
+                      < ResumeArticles article={article} />
                       <div className="tags_articles">{article.tags}</div>
                     </div>
                   </div>

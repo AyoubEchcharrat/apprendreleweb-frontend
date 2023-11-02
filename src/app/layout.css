@@ -48,6 +48,7 @@
     .simulate-bloc {
         position: absolute;
         left: 10px;
+        width: fit-content
     }
     .header {
         justify-content: center;

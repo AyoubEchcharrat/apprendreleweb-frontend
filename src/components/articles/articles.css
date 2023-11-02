@@ -9,12 +9,13 @@
 .container_articles {
   display: flex;
   align-items: center;
-  background-color: #d2d6da;
   border-radius: 10px;
   margin: 5px;
   padding: 0 30px 0 0;
   box-shadow: 0px 7px 17px -14px #190728;
   border-right: #414141 6px solid;
+  background: rgb(238,238,238);
+  background: linear-gradient(0deg, rgba(238,238,238,1) 0%, rgba(247,247,247,1) 100%);  
 }
 
 .image_articles {

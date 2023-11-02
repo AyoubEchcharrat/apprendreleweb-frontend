@@ -39,7 +39,7 @@ export default function App() {
     const title = e.target.elements.title.value
     const content = e.target.elements.content.value
     const tags = e.target.elements.tags.value.split(' ')
-    const imageurl = e.target.elements.imageurl.files[0]
+    const imageurl = e.target.elements.imageurl.value
 
     const formData = new FormData()
     formData.append("title",title)
@@ -84,7 +84,7 @@ export default function App() {
             </div>
             <div className='column fileloader'>
               <label htmlFor="imageurl">Image :</label>
-              <input type="file" id="imageurl" name="imageurl"  accept="image/*"/>
+              <input type="text" id="imageurl" name="imageurl" />
             </div>
             <div className='column'>
               <label htmlFor="date">Date :</label>

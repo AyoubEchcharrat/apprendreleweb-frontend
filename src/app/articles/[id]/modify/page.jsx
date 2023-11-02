@@ -22,8 +22,8 @@ async function sendModif(article,userToken,currentArticleId){
         )
       return data
     }
-    catch (error){
-      console.log({erreur : {error}})
+    catch ({error}){
+      console.log({erreeur : {error}})
     }
 }
 async function deleteArticle(userToken,currentArticleId){
@@ -75,11 +75,8 @@ export default function Modify() {
       const title = e.target.elements.title.value
       const content = e.target.elements.content.value
       const tags = e.target.elements.tags.value.split(' ')
-      if (e.target.elements.imageurl.files[0] !== undefined )
-        {
-          const imageurl = e.target.elements.imageurl.files[0]
-          formData.append("imageurl",imageurl)
-        }
+      const imageurl = e.target.elements.imageurl.value
+      formData.append("imageurl",imageurl)
       formData.append("title",title)
       formData.append("content",content)
       formData.append("tags",tags)
@@ -119,8 +116,8 @@ export default function Modify() {
                 <input type="text" id="tags" name="tags" defaultValue={data.tags} />
               </div>
               <div className='column fileloader'>
-                <label htmlFor="imageurl">Image :</label>
-                <input type="file" id="imageurl" name="imageurl"  accept="image/*"/>
+                <label htmlFor="imageurl">URL de l&apos;image :</label>
+                <input type="text" id="imageurl" name="imageurl" defaultValue={data.imageurl} />
               </div>
               <div className='column'>
                 <label htmlFor="date">Date :</label>
