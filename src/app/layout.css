@@ -4,7 +4,7 @@
     align-items: center;
     width: 100%;
     padding: 20px;
-    background-color: whitesmoke;
+    background-color: #eeeeee;
     position: fixed;
     z-index: 5;
 }
@@ -30,6 +30,7 @@
 .title {
     font-size: 20px;
     font-family: 'Ubuntu';
+    color: black;
 }
 
 .title span {
@@ -56,5 +57,47 @@
     .articles_link {
         padding: 6px 8px;
         font-size: 10px;
+    }
+}
+
+
+/* FOOTER */
+
+.footer_container {
+    background: linear-gradient(198deg,#BD1313, rgb(0 0 0 / 0%)), radial-gradient(circle at -50% 73%, rgb(4 66 66 / 88%), rgba(0,0,0,0)), linear-gradient(224deg, rgb(255 237 0 / 59%), rgba(255,255,255,0)), url(https://grainy-gradients.vercel.app/noise.svg);
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 0;
+}
+
+.footer-links ul li,.footer-others ul li {
+    color: #FFDE9D;
+    font-size: 12px;
+    margin: 10px 0;
+    list-style-type: none;
+}
+
+.footer-others{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-others ul li{
+    width: fit-content;
+    margin: 10px auto;
+}
+
+@media screen and (max-width:690px) {
+    .footer_container {
+        flex-direction: column;
+    }
+    .footer-others{
+        align-items: center;
+    }
+    .footer-links{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
