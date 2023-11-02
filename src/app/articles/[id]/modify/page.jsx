@@ -59,6 +59,7 @@ export default function Modify() {
     const router = useRouter()
     const URL = "https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/"
     const date = new Date().toISOString().split('T')[0]
+    
     useEffect(()=> {
         fetch(`${URL}api/articles/${currentArticleId}`)
         .then((res) => res.json())
