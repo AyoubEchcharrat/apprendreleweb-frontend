@@ -9,15 +9,19 @@ function Page() {
     fetch('https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/sitemap/sitemap.xml')
       .then((response) => response.text())
       .then((data) => {
-        setSitemapContent(data);
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(data, 'text/xml');
+        setSitemapContent(xmlDoc);
       })
       .catch((error) => {
         console.error('Erreur lors de la récupération du sitemap :', error);
       });
   }, []);
 
-  return (
-    {sitemapContent}
+  return (<code>
+      {sitemapContent}
+  </code>
+
 
   );
 }
