@@ -17,9 +17,8 @@ function Page() {
   }, []);
 
   return (
-    <code>
-      <pre>{sitemapContent}</pre>
-    </code>
+    {sitemapContent}
+
   );
 }
 
