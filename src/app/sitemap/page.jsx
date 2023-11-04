@@ -17,10 +17,9 @@ function Page() {
   }, []);
 
   return (
-    <div>
-      <h1>Sitemap</h1>
+    <code>
       <pre>{sitemapContent}</pre>
-    </div>
+    </code>
   );
 }
 
