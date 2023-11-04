@@ -11,16 +11,18 @@ function Page() {
       .then((data) => {
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(data, 'text/xml');
-        setSitemapContent(xmlDoc);
+        const xmlString = new XMLSerializer().serializeToString(xmlDoc);
+
+        setSitemapContent(xmlString);
       })
       .catch((error) => {
         console.error('Erreur lors de la récupération du sitemap :', error);
       });
   }, []);
 
-  return (<code>
+  return (<pre><code>
       {sitemapContent}
-  </code>
+  </code></pre>
 
 
   );
