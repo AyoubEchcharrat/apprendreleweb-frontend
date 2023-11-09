@@ -23,7 +23,7 @@ export default async function page({params}) {
         <main className={styles.main}>
             <GetModifAndDeletIfConnected/>
             <div className="info_article">
-                <div className="back_article"><Link href='/articles'>{`\u2b9c Retour`}</Link></div>
+                <div className="back_article"><Link href='/articles'><span className="back-arrow">{`<`}</span> Retour</Link></div>
                 <div className="date_article" >{formatDate}</div>
             </div>
             <div className="info_article">

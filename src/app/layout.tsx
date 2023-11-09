@@ -36,7 +36,7 @@ export default function RootLayout({
                   <ul>
                     <li><a href="/">Accueil</a></li>
                     <li><a href="/articles">Articles</a></li>
-                    <li><a href="#">À propos</a></li>
+                    <li><a href="/about">À propos</a></li>
                     <li><a href="#">Contact</a></li>
                   </ul>
               </div>

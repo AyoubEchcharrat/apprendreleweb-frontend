@@ -1,14 +1,13 @@
 .section_container{
-    margin: 60px auto 0;
-    padding-bottom:30px;
+    margin: 20px auto;
     max-width: 1144px;
 }
 
 .section_title {
-    font-style: italic;
-    color: #b22323;
-    font-family: 'Anonymous Pro';
-    font-size: 17px;
+    color: #363636;
+    font-family: 'Ubuntu';
+    font-size: 18px;
+    font-weight: 600;
     margin: 15px 0px;
 }
 
@@ -17,13 +16,14 @@
     margin: 20px 0px 0;
     text-align: justify;
     line-height: 1.7;
-    color:rgb(41, 41, 41);
+    color: rgb(41, 41, 41);
+    font-family: 'Lato';
 }
 
 @media screen and (max-width:1200px) {
     .section_container{
         margin: 0;
-        padding: 60px 30px;
+        padding: 10px 30px;
     }
     .section_title {
         font-size: 14px;

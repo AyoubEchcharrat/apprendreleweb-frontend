@@ -37,14 +37,16 @@ export default function LayoutConnexion(){
 
     return (
         <div>
-        {   screenSize > 690 ?
+        {   screenSize > 1200 ?
             <div>
                 {isClient && userToken == null ? 
                     <div className="blocConnected">
+                        <Link href={'/about'}>À propos</Link>
                         <Link className='simulate-bloc' href={'/connexion'}>Connexion</Link>
                     </div>
                         :
                     <div className="blocConnected">
+                        <Link href={'/about'}>À propos</Link>
                         <Link href={'/rediger'}>Rédiger</Link>
                         <Link href='/' onClick={() => dispatch(logout())}>Deconnexion</Link>
                     </div>
@@ -63,12 +65,14 @@ export default function LayoutConnexion(){
                         <div className="blocConnected">
                             <Link onClick={() => handleMenu(false)} href={'/'}>Page d&apos;accueil</Link>
                             <Link onClick={() => handleMenu(false)} href={'/articles'}>Articles</Link>
-                            <Link onClick={() => handleMenu(false)} className='simulate-bloc' href={'/connexion'}>Connexion</Link>
+                            <Link onClick={() => handleMenu(false)} href={'/about'}>À propos</Link>
+                            <Link onClick={() => handleMenu(false)} href={'/connexion'}>Connexion</Link>
                         </div>
                             :
                         <div className="blocConnected">
                             <Link onClick={() => handleMenu(false)} href={'/'}>Page d&apos;accueil</Link>
                             <Link onClick={() => handleMenu(false)} href={'/articles'}>Articles</Link>
+                            <Link onClick={() => handleMenu(false)} href={'/about'}>À propos</Link>
                             <Link onClick={() => handleMenu(false)} href={'/rediger'}>Rédiger</Link>
                             <Link href='/' 
                                 onClick={() => {

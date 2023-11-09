@@ -18,22 +18,24 @@ export default async function LastArticles() {
       const data = AllData.slice(-3).reverse()
       return (
           <div>
-            <div className="list-lastarticles">
-            <p className="section_title" >Derniers Articles :</p>
-              {data.map((article,index) => 
-                <Link key={`${index}-article-home`} href={`articles/${article._id}`}>
-                  <div className="container_articles">
-                    <div className="image_articles">
-                      <img src={article.imageurl} alt="" />
+            <div className="container_lastarticles">
+              <p className="section_title" >Derniers Articles :</p>
+              <div className="list_lastarticles">
+                {data.map((article,index) => 
+                  <Link key={`${index}-article-home`} href={`articles/${article._id}`}>
+                    <div className="container_lastarticle">
+                      <div className="image_lastarticle">
+                        <img className="imageW100" src={article.imageurl} alt="" />
+                      </div>
+                      <div className="text-container_articles">
+                        <h2 className="title_articles">{article.title}</h2>
+                        < ResumeArticles article={article} />
+                        <div className="tags_articles">{article.tags}</div>
+                      </div>
                     </div>
-                    <div className="text-container_articles">
-                      <h2 className="title_articles">{article.title}</h2>
-                      < ResumeArticles article={article} />
-                      <div className="tags_articles">{article.tags}</div>
-                    </div>
-                  </div>
-                </Link>
-              )}
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
       )

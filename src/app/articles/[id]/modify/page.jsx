@@ -74,7 +74,7 @@ export default function Modify() {
       e.preventDefault()
       const title = e.target.elements.title.value
       const content = e.target.elements.content.value
-      const tags = e.target.elements.tags.value.split(' ')
+      const tags = e.target.elements.tags.value.split(',')
       const imageurl = e.target.elements.imageurl.value
       
       const objectArticle = {title,content,tags,imageurl,date}
@@ -110,7 +110,7 @@ export default function Modify() {
                 <textarea id="content" name="content" rows="4" required defaultValue={data.content}></textarea>
               </div>
               <div className='column'>
-                <label htmlFor="tags">Tags :</label>
+                <label htmlFor="tags">Tags : (séparé par une virgule)</label>
                 <input type="text" id="tags" name="tags" defaultValue={data.tags} />
               </div>
               <div className='column fileloader'>

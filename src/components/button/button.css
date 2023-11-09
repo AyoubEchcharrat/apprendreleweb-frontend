@@ -1,0 +1,38 @@
+.button-container{
+    position: relative;
+}
+
+.buttonCTA {
+    width: 160px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #c4c4c4;
+    color: #333;
+    background: white;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: monospace;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.hover-button{
+    position: absolute;
+    width: 160px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 4px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: .2s ;
+}
+
+.buttonCTA:hover ~ .hover-button{
+    top: 2px;
+    left: -2px;
+}

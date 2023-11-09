@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap');
-
 .article h1{
     padding: 0px 0 35px 0;
     font-size: 38px;
@@ -18,21 +16,28 @@
 .article {
     color: #474747;
     max-width: 1424px;
-    background-color: #f2f2f2;
     padding: 30px 45px;
     width: 100%;
 }
 
 .article pre {
-    background-color: #000000;
-    color: #b1b1b1;
+    background-color: #f7f7f7;
+    color: #535353;
     padding: 15px 10px;
-    max-width: fit-content;
-    margin: 20px auto
+    max-width: 900px;
+    margin: 20px auto;
+    border: 1px solid #d5d5d5;
+}
+
+.image_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .image_article {
-    width: 100%;
+    max-width: 1024px;
     margin-bottom: 40px;
 }
 
@@ -87,6 +92,18 @@
 
 .content_article {
     padding: 0 30px;
+}
+
+.article a {
+    color: rgb(104, 25, 177);
+}
+
+.article p {
+    line-height: 1.8;
+}
+
+.back-arrow{
+    font-family: 'Anonymous Pro';
 }
 
 @media screen and (max-width:690px) {

@@ -3,9 +3,9 @@
   flex-direction: column;
   align-items: center;
   padding: 6rem;
-  min-height: 100vh;
-  background: rgb(222,222,222);
-  background: linear-gradient(0deg, rgba(222,222,222,1) 0%, rgba(240,240,240,1) 100%);
+  min-height: calc(100vh - 170.8px);
+  background: #ffffff;
+  background: linear-gradient(0deg,#ffffff,#f8f8f8);
 }
 
 .h1{
@@ -16,6 +16,7 @@
   font-size: 12px;
   text-align: center;
   line-height: 1.7;
+  max-width: 900px;
 }
 
 .articletitle{
@@ -53,34 +54,34 @@
   }
 }
 
-/* --- Home --- */
+/* --- Home (BANNER) --- */
 
 .home{
   padding-top:59px;
   min-height: 100vh;
-  background: rgb(238,238,238);
-  background: linear-gradient(0deg, rgba(238,238,238,1) 0%, rgba(247,247,247,1) 100%);
+  background: #ffffff;
+  background: linear-gradient(0deg,#ffffff,#f8f8f8);
 }
 
 .firstcontenthome{
-  height: 450px;
+  height: 270px;
   background-color: #BD1313;
   position: relative;
   justify-content: center;
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-  padding: 190px;
+  padding: 50px 190px;
   z-index: 4;
-  background: linear-gradient(198deg,#BD1313, rgb(0 0 0 / 0%)), radial-gradient(circle at -50% 73%, rgb(4 66 66 / 88%), rgba(0,0,0,0)), linear-gradient(224deg, rgb(255 237 0 / 59%), rgba(255,255,255,0)), url(https://grainy-gradients.vercel.app/noise.svg);
+  background: linear-gradient(195deg,#43875070, rgb(0 0 0 / 0%)), radial-gradient(circle at -50% 73%, rgb(4 66 66 / 88%), rgba(0,0,0,0)), linear-gradient(224deg, rgb(255 237 0 / 35%), rgba(255,255,255,0)), url(https://grainy-gradients.vercel.app/noise.svg);
 }
 
 .headlinehome{
   color:#FFDE9D;
   font-size:64px;
   z-index: 1;
-  margin-bottom: 40px;
-  font-family: 'Anonymous Pro', monospace;
+  margin-bottom: 10px;
+  font-family: monospace;
 }
 .sublinehome{
   color:#FFDE9D;
@@ -91,7 +92,7 @@
 
 .catimagehome{
   mix-blend-mode: multiply;
-  right: 0;
+  right: 50px;
   bottom: 0;
   position: absolute;
   z-index:0;
@@ -100,44 +101,115 @@
 }
 
 .lineanimationx{
-  border-top: dashed black 1px;
-  width: 170px;
+  border-top: dashed silver 1px;
+  width: 162px;
   position: absolute;
-  top: 191px;
-  left: 10px;
-  font-size: 8px;
+  top: 142px;
+  left: 5px;
+  font-size: 7px;
   display: flex;
   justify-content: center;
   user-select: none;
   pointer-events: none;
+  color:rgb(223, 223, 223);
+  padding-top: 4px;
 }
 .lineanimationy1{
-  border-left: dashed black 1px;
-  height: 165px;
+  border-left: dashed silver 1px;
+  height: 98px;
   position: absolute;
   top: 0;
-  left: 190px;
-  font-size: 8px;
+  left: 192px;
+  font-size: 7px;
   display: flex;
   align-items: center;
   padding: 4px;
   user-select: none;
   pointer-events: none;
+  color:rgb(223, 223, 223)
 }
-.lineanimationy2{
-  border-left: dashed black 1px;
-  height: 40px;
-  position: absolute;
-  top: 220px;
-  left: 190px;
-  font-size: 8px;
+
+/* --- HOME (PRESENTATION) --- */
+
+.presentation{
+  margin: 20px auto;
+  max-width: 1244px;
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  padding: 4px;
+  height: calc(100vh - 370px);
+}
+.partLeft{
+width: 70%;
+}
+
+.partRight{
+  width: 9%;
+  height: 75%;
+  overflow: hidden;
+  margin: 0 30px 0 50px;
+  position: relative;
   user-select: none;
   pointer-events: none;
 }
 
+.partRight:after{
+  content: '';
+  width: 41px;
+  height: 126%;
+  border: #f9f9f9 solid 26px;
+  position: absolute;
+  bottom: -85px;
+  left: 5px;
+  z-index: 5;
+  transform: rotate(6deg);
+}
+
+.imagePresentation{
+  height: 600%;
+  position: relative;
+  top: -800px;
+  animation: godown infinite 15s linear;
+}
+
+@keyframes godown {
+  from{
+    top: -1200px;
+  }
+  to{
+    top:-000px
+  }
+}
+
+.titlePresentation{
+  font-size: 48px;
+  color: #333;
+  line-height: 1;
+  padding-bottom: 20px;
+  font-weight: 800;
+  font-family: 'Ubuntu';
+}
+
+.sublinePresentation{
+  font-size: 24px;
+  color: #333;
+  line-height: 1;
+  padding-bottom: 30px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.paragraph{
+  font-size: 16px;
+  color: #6e6e6e;
+  line-height: 1.7;
+  padding-bottom: 15px;
+  font-family: 'Lato';
+}
+
+.buttonCTA{
+
+}
 
 @media screen and (max-width:1323px) {
   .firstcontenthome{
@@ -154,10 +226,19 @@
   }
 }
 
+@media screen and (max-width:1200px) {
+  .presentation{
+    margin: 20px 30px;
+  }
+}
+
 @media screen and (max-width:990px) {
   .main {
     padding: 15px;
     padding-top: 6rem;
+  }
+  .catimagehome{
+    right:0
   }
 }
 

@@ -6,8 +6,8 @@ import { useEffect,useState } from 'react'
 
 export default function Banner() {
   const [screenSize,setScreenSize] = useState(1600)
-  const [valeur, setValeur] = useState(30)
-  const valueY2 = 20
+  const [valeur, setValeur] = useState(77)
+  const valueY2 = 47
 
   function subline() {
     return "<subline> Exploration Subtile du Monde Web et de ses Langages.</subline>"
@@ -26,14 +26,15 @@ export default function Banner() {
   const movingLineY2 = {
       height: `${valeur}px`,
       transition: "height .5s ease-in-out",
-      borderLeft: "dashed black 1px",
+      borderLeft: "dashed silver 1px",
       position: "absolute",
-      top: "220px",
-      left: "190px",
-      fontSize: "8px",
+      top: "190px",
+      left: "192px",
+      fontSize: "7px",
       display: "flex",
       alignItems: "center",
       padding: "4px",
+      color:"rgb(223, 223, 223)"
   }
 
   useEffect(() => {
@@ -54,7 +55,7 @@ export default function Banner() {
             <div className={styles.lineanimationx}>190px</div>
             <div className={styles.lineanimationy1}>172px</div>
             <div style={movingLineY2}>{movingLineY2.height}</div>
-            <Image className={styles.catimagehome} priority={true} src="/cat.png" width={467} height={441} alt="subtile draw of cat" />
+            <Image className={styles.catimagehome} priority={true} src="/cat.png" width={310} height={300} alt="subtile draw of cat" />
             <p className={styles.headlinehome}>Cultivez votre curiosité.\n</p>
             <p className={styles.sublinehome}> {subline()} </p>
           </div>

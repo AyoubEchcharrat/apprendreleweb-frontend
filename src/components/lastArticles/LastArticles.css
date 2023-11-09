@@ -1,8 +1,48 @@
-.list-lastarticles{
-    margin: 20px auto;
+.container_lastarticles{
+    margin: auto;
     max-width: 1144px;
+    padding: 20px;
+}
+
+.list_lastarticles{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.container_lastarticle {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    margin: 5px 5px 25px;
+    width: 360px;
+    height: 500px;
+    box-shadow: 0px 7px 17px -14px #190728;
+}
+
+.image_lastarticle {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+    height: 150px;
+    width: 100%;
+}
+
+.imageW100{
+    width: 100%;
+}
+
+.section_title{
+    font-size: 20px;
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 700;
+    color: #333;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 20px;
 }
 
 @media screen and (max-width:1200px) {
