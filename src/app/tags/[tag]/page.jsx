@@ -1,4 +1,5 @@
 import styles from "../../page.module.css"
+import Link from "next/link"
 
 async function getArticles() {
     const res = await fetch(`https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/articles/?timestamp=${Date.now()}`, { cache: 'no-store' })
