@@ -1,0 +1,42 @@
+.randomArticle-container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content;
+}
+
+.randomArticle-title {
+    font-size: 17px;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+    color: #333;
+    margin-bottom: 10px;
+    hyphens: auto;
+}
+
+.randomArticle-container .content_articles {
+    color: #333;
+    font-family: 'Lato';
+    text-align: justify;
+    font-size: 14px;
+}
+
+.randomArticle-infos{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0px;
+    font-family: 'Ubuntu';
+}
+
+@media screen and (max-width:1280px) {
+    .randomArticle-container .content_articles {
+        display: none;
+    }
+}
+
+@media screen and (max-height:1000px) {
+    .randomArticle-container .content_articles {
+        display: none;
+    }
+}

@@ -22,7 +22,7 @@ export default function Page() {
               <h3 className={styles.sublinePresentation}>Bienvenue sur mon blog ! Je m&apos;appelle Ayoub, je suis un développeur Front-End spécialisé React.</h3>
               <p className={styles.paragraph}>En tant que développeur, j&apos;ai consacré des années à créer des interfaces conviviales et à donner vie aux applications web. Doté d&apos;un sens aigu du détail, je suis constamment à l&apos;affût des dernières tendances en développement Front-End, et je suis ravi de partager mes connaissances et mon expertise avec vous.</p>
               <p className={styles.paragraph}>Sur ce blog, j&apos;aborde divers sujets liés au développement de logiciels, en mettant l&apos;accent sur JavaScript, React, Next.Js, Jest et Node.Js. De temps en temps, j&apos;écris également sur la productivité des développeurs.</p>
-              <Button link='/articles' />
+              <Button link='/articles' content="C'est parti" />
             </div>
             <div className={styles.partRight}>
               <img className={styles.imagePresentation} src="/blueimage.jpg" alt="" />

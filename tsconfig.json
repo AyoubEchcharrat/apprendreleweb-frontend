@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/redux/features/AuthSlice.js", "src/app/connexion/page.jsx", "src/redux/features/AuthActions.js", "src/app/rediger/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/redux/features/AuthSlice.js", "src/app/connexion/page.jsx", "src/redux/features/AuthActions.js", "src/app/rediger/page.jsx", "src/app/articles/page.jsx", "src/components/articles/Articles.jsx"],
   "exclude": ["node_modules"]
 }

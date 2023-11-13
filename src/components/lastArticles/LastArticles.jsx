@@ -22,7 +22,7 @@ export default async function LastArticles() {
               <p className="section_title" >Derniers Articles :</p>
               <div className="list_lastarticles">
                 {data.map((article,index) => 
-                  <Link key={`${index}-article-home`} href={`articles/${article._id}`}>
+                  <Link key={`${index}-article-home`} href={`/articles/${article._id}`}>
                     <div className="container_lastarticle">
                       <div className="image_lastarticle">
                         <img className="imageW100" src={article.imageurl} alt="" />
@@ -30,7 +30,15 @@ export default async function LastArticles() {
                       <div className="text-container_articles">
                         <h2 className="title_articles">{article.title}</h2>
                         < ResumeArticles article={article} />
-                        <div className="tags_articles">{article.tags}</div>
+                        <div className="tags_container">
+                          {article.tags.map((tag,index) => (
+                            <Link key={`${index}-article-tags`} href={`/tags/${tag}`}><div className="tags_articles"> {tag}</div></Link>
+                          ))}
+                        </div>
+                        <div className="infos_articles">
+                          <div className="readTime_articles">{readTimed(article)} min de lécture &#x2022;</div>
+                          <div className="formatteddate_articles">Mis à jour le {formated(article)} </div>
+                        </div>
                       </div>
                     </div>
                   </Link>
