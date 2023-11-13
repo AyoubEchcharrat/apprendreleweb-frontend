@@ -6,6 +6,8 @@ import { useRouter } from 'next/navigation'
 import { loginUser } from "@/redux/features/AuthActions";
 import { refreshUserDatas } from "@/redux/features/AuthSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import './connexion.css'
+import Button from "@/components/button/Button";
 
 const ConnexionPage = () => {
     const [data,setData] = useState({email:'',password:''})
@@ -31,10 +33,10 @@ const ConnexionPage = () => {
 
     return (
         <main className={styles.main}>
-            <form onSubmit={handleSubmit}>
-                <input onChange={handleChange} id="email" type="email" name="email" placeholder="Email" required/>
-                <input onChange={handleChange} id="password" type="password" name="password" required/>
-                <button type="submit">Valider</button>
+            <form className="connexion" onSubmit={handleSubmit}>
+                <input className="connexion" onChange={handleChange} id="email" type="email" name="email" placeholder="Email" required/>
+                <input className="connexion" onChange={handleChange} id="password" type="password" name="password"  placeholder="Mot de passe" required/>
+                <Button link="submit" content="Se connecter" type="submit">Valider</Button>
             </form>
         </main>
     )
