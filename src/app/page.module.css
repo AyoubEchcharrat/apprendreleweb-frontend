@@ -172,7 +172,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: calc(100vh - 370px);
+  min-height: calc(100vh - 370px);
 }
 .partLeft{
 width: 70%;
@@ -180,7 +180,7 @@ width: 70%;
 
 .partRight{
   width: 9%;
-  height: 75%;
+  height: 600px;
   overflow: hidden;
   margin: 0 30px 0 50px;
   position: relative;
@@ -192,7 +192,7 @@ width: 70%;
   content: '';
   width: 41px;
   height: 126%;
-  border: #f9f9f9 solid 26px;
+  border: #fbfbfb solid 26px;
   position: absolute;
   bottom: -85px;
   left: 5px;
@@ -258,9 +258,25 @@ width: 70%;
   .sublinehome{
     font-size:12px;
   }
+  .titlePresentation{
+    font-size: 34px;
+  }
+  .sublinePresentation{
+    font-size: 20px;
+  }
+  .paragraph{
+    font-size: 14px;
+    text-align: justify;
+  }
+  .partRight{
+    height: 400px;
+  }
 }
 
 @media screen and (max-width:1200px) {
+  .partRight{
+    display: none;
+  }
   .presentation{
     margin: 20px 30px;
   }
@@ -273,6 +289,12 @@ width: 70%;
   }
   .catimagehome{
     right:0
+  }
+  .partLeft{
+    width: 100%;
+  }
+  .titlePresentation{
+    font-size: 28px;
   }
 }
 
@@ -314,6 +336,15 @@ width: 70%;
     padding:0 60px;
   }
   .mainInRow{
-    padding: 1rem;
+    padding: 6rem 1rem;
+  }
+  .titlePresentation{
+    font-size: 24px;
+  }
+  .sublinePresentation{
+    font-size: 18px;
+  }
+  .paragraph{
+    font-size: 12px;
   }
 }

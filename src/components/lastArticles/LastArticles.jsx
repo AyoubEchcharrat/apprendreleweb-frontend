@@ -13,8 +13,21 @@ async function getArticles() {
 }
 
 export default async function LastArticles() {
-    try{
+  function formated(article){
+    const dateObj = new Date(article.date);
+    const options = { day: 'numeric', month: 'short', year: 'numeric' };
+    const formattedDate = new Intl.DateTimeFormat('fr-FR', options).format(dateObj);
+    return formattedDate
+  }
+  function readTimed(article){
+    const words = article.content.split(' ');
+    const readTime = Math.floor(words.length / 200)
+    return readTime
+  }
+  
+  try{
       const AllData = await getArticles()
+
       const data = AllData.slice(-3).reverse()
       return (
           <div>
@@ -22,13 +35,16 @@ export default async function LastArticles() {
               <p className="section_title" >Derniers Articles :</p>
               <div className="list_lastarticles">
                 {data.map((article,index) => 
-                  <Link key={`${index}-article-home`} href={`/articles/${article._id}`}>
-                    <div className="container_lastarticle">
-                      <div className="image_lastarticle">
-                        <img className="imageW100" src={article.imageurl} alt="" />
-                      </div>
+                    <div key={`${index}-article-home`} className="container_lastarticle">
+                      <Link href={`/articles/${article._id}`}>
+                        <div className="image_lastarticle">
+                          <img className="imageW100" src={article.imageurl} alt="" />
+                        </div>
+                      </Link>
                       <div className="text-container_articles">
-                        <h2 className="title_articles">{article.title}</h2>
+                        <Link href={`/articles/${article._id}`}>
+                          <h2 className="title_articles">{article.title}</h2>
+                        </Link>
                         < ResumeArticles article={article} />
                         <div className="tags_container">
                           {article.tags.map((tag,index) => (
@@ -41,7 +57,6 @@ export default async function LastArticles() {
                         </div>
                       </div>
                     </div>
-                  </Link>
                 )}
               </div>
             </div>

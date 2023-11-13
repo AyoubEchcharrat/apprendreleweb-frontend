@@ -27,11 +27,12 @@
 @media screen and (max-width:1280px) {
     .sticky{
         right: 1rem;
-        top: 70px;
+        top: 50%;
+        transform: translateY(-50%);
         width: calc(34% - 1rem);
     }
     .title_rightMenu{
-        margin: 0 0 10px 0;
+        margin: 25px 0;
         font-size: 18px;
     }
 }

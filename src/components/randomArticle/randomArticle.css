@@ -33,6 +33,13 @@
     .randomArticle-container .content_articles {
         display: none;
     }
+    .randomArticle-infos {
+        margin: 0 0 15px 0px;
+        font-size: 12px;
+    }
+    .randomArticle-title {
+        font-size: 15px;
+    }
 }
 
 @media screen and (max-height:1000px) {

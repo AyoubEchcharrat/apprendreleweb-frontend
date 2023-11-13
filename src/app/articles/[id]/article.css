@@ -37,7 +37,7 @@
 }
 
 .image_article {
-    max-width: 1024px;
+    max-width: 70%;
     margin-bottom: 40px;
 }
 
@@ -106,7 +106,17 @@
     font-family: 'Anonymous Pro';
 }
 
+@media screen and (max-width:1280px) {
+    .image_article {
+        max-width: 60%;
+    }
+}
+
 @media screen and (max-width:690px) {
+    .info_article {
+        flex-direction: column;
+    }
+
     .article {
         padding: 30px 20px;
     }
@@ -140,6 +150,9 @@
 
     .article li {
         margin:10px 0;
+    }
+    .image_article {
+        max-width: 100%;
     }
   }
   

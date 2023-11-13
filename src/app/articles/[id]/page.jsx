@@ -2,6 +2,7 @@ import "./article.css"
 import styles from "../../page.module.css"
 import Link from "next/link"
 import GetModifAndDeletIfConnected from '@/components/article/GetModifAndDeletIfConnected'
+import '@/components/articles/articles.css'
 
 async function getArticle(id) {
     const res = await fetch(`https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/articles/${id}?timestamp=${Date.now()}`)
@@ -28,7 +29,11 @@ export default async function page({params}) {
             </div>
             <div className="info_article">
                 <div className="title_article" >{data.title}</div>
-                <div className="tags_article" >{data.tags}</div>
+                <div className="tags_container">
+                          {data.tags.map((tag,index) => (
+                            <Link key={`${index}-article-tags`} href={`/tags/${tag}`}><div className="tags_articles"> {tag}</div></Link>
+                          ))}
+                </div>
             </div>
 
             <div className='article'>
