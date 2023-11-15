@@ -3,6 +3,11 @@ import Articles from "../../../components/articles/Articles";
 import { Suspense } from "react";
 import RightMenu from "@/components/rightMenu/RightMenu";
 
+export const metadata = {
+  title: 'Recherche par Tags | Apprendre Le Web',
+  description: "Explorez le monde du développement web avec des articles captivants et instructifs sur ApprendreLeWeb. Plongez dans des sujets variés, de la programmation aux dernières tendances, pour enrichir vos connaissances et stimuler votre passion pour le web.",
+}
+
 async function getArticles() {
     const res = await fetch(`https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/articles/?timestamp=${Date.now()}`, { cache: 'no-store' })
     if (!res.ok) {

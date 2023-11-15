@@ -30,8 +30,9 @@
 
 .title {
     font-size: 20px;
-    font-family: 'Ubuntu';
-    color: black;
+    font-family: 'IBM Plex Mono';
+    color: #ffffff;
+    background-color: #262626;
 }
 
 .title span {

@@ -3,15 +3,17 @@ import styles from './page.module.css'
 import LastArticles from '../components/lastArticles/LastArticles'
 import { Suspense } from "react";
 import Banner from '../components/banner/Banner'
-import Head from 'next/head';
 import Button from '@/components/button/Button.jsx'
+
+
+export const metadata = {
+  title: 'Accueil | Apprendre Le Web',
+  description: "Explorez le monde du développement web avec des articles captivants et instructifs sur ApprendreLeWeb. Plongez dans des sujets variés, de la programmation aux dernières tendances, pour enrichir vos connaissances et stimuler votre passion pour le web.",
+}
 
 export default function Page() {
   return (
     <div>
-      <Head>
-      <meta name="google-site-verification" content="x2PAHNdJdspaIbF_yDVwJA57LJpxiiQy6ENeOq6ndYE" />
-      </Head>
       <main className={styles.home}>
         <Banner/>
         <Suspense fallback={<div className={styles.loadingContainer}><div className={styles.loadingEffect}></div></div>}>

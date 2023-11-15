@@ -6,7 +6,6 @@ import React, { useState } from 'react';
 import axios from "axios";
 import { useAppSelector } from "@/redux/hooks";
 
-
 async function sendArticle(article,userToken) {
   try{
     const config = {

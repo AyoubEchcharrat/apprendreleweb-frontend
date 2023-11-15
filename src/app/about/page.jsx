@@ -1,6 +1,11 @@
 import styles from "../page.module.css"
 import Section from '../../components/section/Section.jsx'
 
+export const metadata = {
+    title: 'À propos | Apprendre Le Web',
+    description: "Explorez le monde du développement web avec des articles captivants et instructifs sur ApprendreLeWeb. Plongez dans des sujets variés, de la programmation aux dernières tendances, pour enrichir vos connaissances et stimuler votre passion pour le web.",
+  }
+
 const Page = () => {
     return (    
     <main className={styles.main}>

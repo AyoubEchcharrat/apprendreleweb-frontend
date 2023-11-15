@@ -4,6 +4,7 @@ import Link from "next/link"
 import GetModifAndDeletIfConnected from '@/components/article/GetModifAndDeletIfConnected'
 import '@/components/articles/articles.css'
 
+
 async function getArticle(id) {
     const res = await fetch(`https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/articles/${id}?timestamp=${Date.now()}`)
     if (!res.ok) {
@@ -13,7 +14,16 @@ async function getArticle(id) {
     return res.json()
 }
 
+export async function generateMetadata({ params }) {
+    const data = await getArticle(params.id);
+    return {
+        title : `${data.title} | Apprendre Le Web`,
+        desciption: data.content.split('<p>').slice(1).join(" ").split('</p>').slice(0,1)
+    };
+}
+
 export default async function page({params}) {
+    
     const data = await getArticle(params.id)
     function createMarkupContent() {
         return {__html: data.content};

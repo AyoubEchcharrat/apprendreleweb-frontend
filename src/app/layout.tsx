@@ -6,11 +6,11 @@ const inter = Inter({ subsets: ['latin'] })
 import './layout.css'
 import LayoutConnexion from './LayoutConnexion'
 import { Providers } from "@/redux/provider";
-import ALW from '@/public/ALW1.png'
 
-export const metadata: Metadata = {
+
+export const metadata = {
   title: 'Apprendre Le Web',
-  description: "ApprendreLeWeb est un site-blog qui propose des articles sur divers sujets liés au développement web.",
+  description: "Explorez le monde du développement web avec des articles captivants et instructifs sur ApprendreLeWeb. Plongez dans des sujets variés, de la programmation aux dernières tendances, pour enrichir vos connaissances et stimuler votre passion pour le web.",
 }
 
 export default function RootLayout({

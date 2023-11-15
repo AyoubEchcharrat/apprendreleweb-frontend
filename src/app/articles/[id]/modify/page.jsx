@@ -7,7 +7,6 @@ import { useAppSelector } from "@/redux/hooks";
 import axios from "axios";
 import '../../../rediger/rediger.css'
 
-
 async function sendModif(article,userToken,currentArticleId){
     try{
       const config = {
