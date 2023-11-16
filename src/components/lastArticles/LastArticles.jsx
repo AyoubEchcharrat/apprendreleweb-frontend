@@ -52,7 +52,7 @@ export default async function LastArticles() {
                           ))}
                         </div>
                         <div className="infos_articles">
-                          <div className="readTime_articles">{readTimed(article)} min de lécture &#x2022;</div>
+                          <div className="readTime_articles">{readTimed(article)} min de lécture &#x2022;  &nbsp;</div>
                           <div className="formatteddate_articles">Mis à jour le {formated(article)} </div>
                         </div>
                       </div>

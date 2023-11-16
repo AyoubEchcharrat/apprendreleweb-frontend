@@ -6,12 +6,45 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import {useEffect,useState} from "react"
 import "./LayoutConnexion.css"
 
+
+
+
 export default function LayoutConnexion(){
     const {userToken,dataLoad} = useAppSelector((state) => state.authReducer)
     const dispatch = useAppDispatch();
     const [isClient, setIsClient] = useState(false)
     const [isOpenMenu,setIsOpenMenu] = useState(false)
     const [screenSize,setScreenSize] = useState(1600)
+    const [isCheckTrue, setIsCheckTrue] = useState(false)
+
+    useEffect(()=>{
+        const check = async (userToken:string) => {
+            try {
+                const res = await fetch('https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/auth/check', {
+                  method: 'GET',
+                  headers: {
+                    'Authorization': `Bearer ${userToken}`,
+                    'Content-Type': 'application/json',
+                  }
+                });
+            
+                if (res.status === 200) {
+                    setIsCheckTrue(true)
+                }
+            
+                if (res.status === 401) {
+                    dispatch(logout())
+                    setIsCheckTrue(false)
+                }
+            }catch{
+                return Error
+            }
+        }
+        if(userToken){
+            check(userToken)
+        }
+    },[])
+
     useEffect(() => {
         if(dataLoad === false) {
             dispatch(() => refreshUserDatas())
@@ -39,7 +72,7 @@ export default function LayoutConnexion(){
         <div>
         {   screenSize > 1200 ?
             <div>
-                {isClient && userToken == null ? 
+                {/* (isClient && userToken == null ) && */ isCheckTrue === false ? 
                     <div className="blocConnected">
                         <Link href={'/about'}>À propos</Link>
                         <Link className='simulate-bloc' href={'/connexion'}>Connexion</Link>

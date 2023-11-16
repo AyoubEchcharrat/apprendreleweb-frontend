@@ -30,6 +30,7 @@ export default function App() {
   const userToken = useAppSelector((state) => state.authReducer.userToken)
   const [loading,setLoading] = useState(false)
   const [error,setError] = useState(false)
+
   const date = new Date().toISOString().split('T')[0]
 
   const handleSubmit = async (e) => {
@@ -55,8 +56,8 @@ export default function App() {
   }
 
   return (
-
     <main className={styles.main}>
+      
       {error ? <div> Une erreur est surevenu ... </div> 
       :
       <div style={{width:'100%',height:'100%'}}>

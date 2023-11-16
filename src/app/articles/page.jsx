@@ -9,7 +9,7 @@ export const metadata = {
 }
 
 async function getArticles() {
-    const res = await fetch(`https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/articles/?timestamp=${Date.now()}`,{next: { revalidate: 300 }})
+    const res = await fetch(`https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/articles/`,{next: { revalidate: 3600 }})
     if (!res.ok) {
       throw new Error('Failed to fetch data')
     }
