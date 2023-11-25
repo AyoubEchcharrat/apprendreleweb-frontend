@@ -292,14 +292,3 @@ Intellij-light style (c) Pegasis <me@pegasis.site>
     font-weight: bold;
   }
   
-  .hljs-variable,
-  .hljs-operator,
-  .hljs-punctuation,
-  .hljs-title.class_.inherited__,
-  .hljs-title.class_,
-  .hljs-params,
-  .hljs-bullet,
-  .hljs-formula,
-  .hljs-tag {
-    /* purposely ignored */
-  }
