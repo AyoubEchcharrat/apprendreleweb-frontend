@@ -9,4 +9,20 @@ module.exports = {
       },
     pageExtensions: ['jsx', 'js', 'ts', 'tsx'], // Incluez les extensions de fichiers de vos pages
     generateEtags: false,
+    images: {
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'images2.imgbox.com',
+        },
+        {
+          protocol: 'https',
+          hostname: 'www.zupimages.net',
+        },
+        {
+          protocol: 'https',
+          hostname: 'zupimages.net',
+        },
+      ],
+    },
   };

@@ -4,7 +4,7 @@ import LastArticles from '../components/lastArticles/LastArticles'
 import { Suspense } from "react";
 import Banner from '../components/banner/Banner'
 import Button from '@/components/button/Button.jsx'
-
+import Image from 'next/image';
 
 export const metadata = {
   title: 'Accueil | Apprendre Le Web',
@@ -27,11 +27,12 @@ export default function Page() {
               <Button link='/articles' content="C'est parti" />
             </div>
             <div className={styles.partRight}>
-              <img className={styles.imagePresentation} src="/blueimage.jpg" alt="" />
+              <Image quality={100} className={styles.illuPresentation} src="/illu-computer.png" width={700} height={700} alt="" />
+              <Image quality={0} className={styles.illuShadowPresentation} src="/illu-computer.png" width={500} height={500} alt="" />
             </div>
           </div>
           <LastArticles/>  
-        </Suspense>
+      </Suspense>
       </main>
     </div>
   )

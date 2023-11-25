@@ -21,18 +21,25 @@ const BlogIndex = async () => {
     
     const articles = await getArticles()
     return (    
-    <main className={styles.mainInRow}>
-      <div className={styles.column}>
-        <p className={styles.paragraphe}>Bienvenue dans notre espace dédié aux connaissances et à l&apos;exploration. Nos articles regorgent de ressources informatives, de réflexions approfondies et d&apos;insights pertinents. Explorez ces articles pour élargir votre horizon sur divers sujets du monde de la technologie et du développement web.</p>
+      <main className={styles.main}>
+        <section className={styles.FirstBlocPage}>
+        <p className={styles.paragrapheHeadline}>Bienvenue dans notre espace dédié aux connaissances et à l&apos;exploration. Nos articles regorgent de ressources informatives, de réflexions approfondies et d&apos;insights pertinents. Explorez ces articles pour élargir votre horizon sur divers sujets du monde de la technologie et du développement web.</p>
         <h1 className={styles.h1}>Apprendre le Web grâce à nos articles</h1>
-        <Suspense fallback={<div className={styles.loadingContainer}><div className={styles.loadingEffect}></div></div>}>
-            <Articles articles={articles}/>
-        </Suspense>
-      </div>
-      <div className={styles.rightColumn}>
-        <RightMenu articles={articles}/>
-      </div>
-    </main>
+        </section>
+        <section className={styles.mainInRow}>
+          <div className={styles.column}>
+            
+            
+            <Suspense fallback={<div className={styles.loadingContainer}><div className={styles.loadingEffect}></div></div>}>
+                <Articles articles={articles}/>
+            </Suspense>
+          </div>
+          <div className={styles.rightColumn}>
+            <RightMenu articles={articles}/>
+          </div>
+        </section>
+      </main>
+    
     )
 }
 

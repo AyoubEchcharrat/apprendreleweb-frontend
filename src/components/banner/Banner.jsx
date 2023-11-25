@@ -3,6 +3,7 @@
 import styles from '../../app/page.module.css'
 import Image from 'next/image'
 import { useEffect,useState } from 'react'
+import {blur} from '@/components/blurDataURLPlanet.jsx'
 
 export default function Banner() {
   const [screenSize,setScreenSize] = useState(1600)
@@ -12,6 +13,8 @@ export default function Banner() {
   function subline() {
     return "<subline> Exploration Subtile du Monde Web et de ses Langages.</subline>"
   }
+
+  
 
   useEffect(() => {
     const interval = setInterval(
@@ -55,13 +58,15 @@ export default function Banner() {
             <div className={styles.lineanimationx}>190px</div>
             <div className={styles.lineanimationy1}>172px</div>
             <div style={movingLineY2}>{movingLineY2.height}</div>
-            <Image className={styles.catimagehome} priority={true} src="/cat.png" width={310} height={300} alt="subtile draw of cat" />
+            <Image placeholder='blur' quality={100} className={styles.planetimagehome} priority={true} src="/illu-planet.png" width={1000} height={1000} alt="subtile draw of a planet" 
+            blurDataURL={blur} />
             <p className={styles.headlinehome}>Cultivez votre curiosité.\n</p>
             <p className={styles.sublinehome}> {subline()} </p>
           </div>
           :
           <div className={styles.firstcontenthome}>
-            <Image className={styles.catimagehome} priority={true} src="/cat.png" width={180} height={160} alt="subtile draw of cat" />
+            <Image placeholder='blur' quality={100} className={styles.planetimagehome} priority={true} src="/illu-planet.png" width={700} height={700} alt="subtile draw of a planet" 
+            blurDataURL={blur} />
             <p className={styles.headlinehome}>Cultivez votre curiosité.\n</p>
             <p className={styles.sublinehome}> {subline()} </p>
           </div>

@@ -1,7 +1,7 @@
 import Link from "next/link"
 import "./articles.css"
 import ResumeArticles from '../ResumeArticles.jsx'
-
+import Image from "next/image";
 
 export default async function Articles({articles}) {
 
@@ -24,9 +24,9 @@ export default async function Articles({articles}) {
             <div className="list-articles">
               {data.map((article,index) => 
                   <div className="container_articles" key={`${index}-article-pageArticles`}>
-                    <Link href={`/articles/${article._id}`}>
+                    <Link style={{width:'100%'}} href={`/articles/${article._id}`}>
                       <div className="image_articles">
-                        <img src={article.imageurl} alt="" />
+                        <Image priority={false}  sizes="(max-width: 850px) 100vw" quality={70} fill={true} src={article.imageurl} alt="" />
                       </div>
                     </Link>
                     <div className="text-container_articles">

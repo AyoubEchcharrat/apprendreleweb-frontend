@@ -8,10 +8,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 10px;
-  margin: 5px 5px 25px;
+  margin: 5px 5px 10px;
   max-width: 850px;
-  box-shadow: 0px 7px 17px -14px #190728;
+  padding-bottom: 50px;
+  border-bottom: #dadada 1px solid;
 }
 
 .image_articles {
@@ -19,13 +19,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px 10px 0 0;
+  border-radius: 10px;
   height:330px;
   width: 100%;
+  position: relative;
 }
 
 .image_articles img  {
-  width: 100%;
+  object-fit: cover;
 }
 
 .text-container_articles {
@@ -74,9 +75,9 @@
 .infos_articles {
   display: flex;
   text-transform: uppercase;
-  font-weight: 600;
-  font-size: 13px;
-  color: #767676;
+  font-weight: 400;
+  font-size: 12px;
+  color: #6d6d6d;
   margin: 5px 0;
   font-family: 'Lato';
 }

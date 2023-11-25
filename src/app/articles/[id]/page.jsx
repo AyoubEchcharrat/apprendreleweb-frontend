@@ -3,6 +3,10 @@ import styles from "../../page.module.css"
 import Link from "next/link"
 import GetModifAndDeletIfConnected from '@/components/article/GetModifAndDeletIfConnected'
 import '@/components/articles/articles.css'
+/* import PrismComp from '@/components/prism/Prism' */
+import Markdown from 'react-markdown'
+import rehypeHighlight from 'rehype-highlight'
+
 
 
 async function getArticle(id) {
@@ -23,15 +27,14 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function page({params}) {
-    
+
     const data = await getArticle(params.id)
-    function createMarkupContent() {
-        return {__html: data.content};
-    }
+
     var date = data.date.split('-')
     const formatDate = `${date[2]}/${date[1]}/${date[0]}`
     return (
         <main className={styles.main}>
+            {/* <PrismComp/> */}
             <GetModifAndDeletIfConnected/>
             <div className="info_article">
                 <div className="back_article"><Link href='/articles'><span className="back-arrow">{`<`}</span> Retour</Link></div>
@@ -46,10 +49,20 @@ export default async function page({params}) {
                 </div>
             </div>
 
+            {
+            data.content.charAt(0) === '#' ? 
             <div className='article'>
                 <div className="image_container"><img className="image_article" src={data.imageurl}/></div>
-                <div className="content_article"  dangerouslySetInnerHTML={createMarkupContent()}/>
+                <div className="content_article">
+                    <Markdown rehypePlugins={[rehypeHighlight]}>{data.content}</Markdown>
+                </div>
             </div>
+            :
+            <div className='article'>
+                <div className="image_container"><img className="image_article" src={data.imageurl}/></div>
+                <div className="content_article" dangerouslySetInnerHTML={{__html: data.content}}/>
+            </div>
+            }
         </main>
     )
 }
