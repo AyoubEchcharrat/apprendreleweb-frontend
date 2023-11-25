@@ -105,6 +105,10 @@ export default function Modify() {
                 <input type="text" id="title" name="title" required defaultValue={data.title}/>
               </div>
               <div className='column'>
+                <label htmlFor="introduction">Introduction :</label>
+                <textarea id="introduction" name="introduction" rows="2" required defaultValue={data.introduction}></textarea>
+              </div>
+              <div className='column'>
                 <label htmlFor="content">Contenu :</label>
                 <textarea id="content" name="content" rows="4" required defaultValue={data.content}></textarea>
               </div>

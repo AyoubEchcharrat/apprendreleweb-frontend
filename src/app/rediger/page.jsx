@@ -70,6 +70,10 @@ export default function App() {
               <input type="text" id="title" name="title" required />
             </div>
             <div className='column'>
+              <label htmlFor="introduction">Introduction :</label>
+              <textarea id="introduction" name="introduction" rows="2" required></textarea>
+            </div>
+            <div className='column'>
               <label htmlFor="content">Contenu :</label>
               <textarea id="content" name="content" rows="4" required></textarea>
             </div>

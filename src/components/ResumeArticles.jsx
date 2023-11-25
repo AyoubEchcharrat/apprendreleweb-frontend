@@ -19,7 +19,7 @@ export default function ResumeArticles({article}) {
     return (
         <div>
             {screenSize > 760 && 
-            <div className="content_articles" dangerouslySetInnerHTML={{__html: article.content.split('<p>').slice(1).join(" ").split('</p>').slice(0,1)}}/>
+            <div className="content_articles">{article.introduction}</div>
         }
         </div>
     )
