@@ -3,11 +3,10 @@ import styles from "../../page.module.css"
 import Link from "next/link"
 import GetModifAndDeletIfConnected from '@/components/article/GetModifAndDeletIfConnected'
 import '@/components/articles/articles.css'
-/* import PrismComp from '@/components/prism/Prism' */
+import RightMenuSingle from '@/components/rightMenu/RightMenuSingle'
+import remarkHeadingId from 'remark-heading-id';
 import Markdown from 'react-markdown'
 import rehypeHighlight from 'rehype-highlight'
-
-
 
 async function getArticle(id) {
     const res = await fetch(`https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/articles/${id}?timestamp=${Date.now()}`)
@@ -34,7 +33,6 @@ export default async function page({params}) {
     const formatDate = `${date[2]}/${date[1]}/${date[0]}`
     return (
         <main className={styles.main}>
-            {/* <PrismComp/> */}
             <GetModifAndDeletIfConnected/>
             <div className="info_article">
                 <div className="back_article"><Link href='/articles'><span className="back-arrow">{`<`}</span> Retour</Link></div>
@@ -50,18 +48,32 @@ export default async function page({params}) {
             </div>
 
             {
-            data.content.charAt(0) === '#' ? 
-            <div className='article'>
-                <div className="image_container"><img className="image_article" src={data.imageurl}/></div>
-                <div className="content_article">
-                    <Markdown rehypePlugins={[rehypeHighlight]}>{data.content}</Markdown>
+            data.content.charAt(0) === '#' ?
+                <div className='article'>
+                    <div className={styles.column}>
+                        <div className="image_container"><img className="image_article" src={data.imageurl}/></div>
+                        <div className="content_article">
+                            <Markdown 
+                                rehypePlugins={[rehypeHighlight]}
+                                remarkPlugins={[remarkHeadingId]}
+                            >{data.content}</Markdown>
+                        </div>
+                    </div>
+                    <div className={styles.rightColumn}>
+                        <RightMenuSingle/>
+                    </div>
                 </div>
-            </div>
             :
-            <div className='article'>
-                <div className="image_container"><img className="image_article" src={data.imageurl}/></div>
-                <div className="content_article" dangerouslySetInnerHTML={{__html: data.content}}/>
-            </div>
+                <div className='article'>
+                    <div className={styles.column}>
+                        <div className="image_container"><img className="image_article" src={data.imageurl}/></div>
+                        <div className="content_article" dangerouslySetInnerHTML={{__html: data.content}}/>
+                    </div>
+                    <div className={styles.rightColumn}>
+                        <RightMenuSingle/>
+                    </div>
+
+                </div>
             }
         </main>
     )

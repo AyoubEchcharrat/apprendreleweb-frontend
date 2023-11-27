@@ -22,7 +22,7 @@ export default async function GetAllTags() {
     return (
         <div className="tags-container">
             {uniqueTags.map((tag,index) => (
-                <Link key={index} href={`/tags/${tag}`} ><div className="tag-bubble" >{tag}</div></Link>
+                <Link key={`tag-${index}`} href={`/tags/${tag}`} ><div className="tag-bubble" >{tag}</div></Link>
             ))}
         </div>
     )

@@ -1,7 +1,7 @@
 import styles from "../page.module.css"
 import { Suspense } from "react";
 import Articles from "../../components/articles/Articles";
-import RightMenu from '@/components/rightMenu/RightMenu'
+import RightMenuArticles from '@/components/rightMenu/RightMenuArticles'
 
 export const metadata = {
   title: 'Articles | Apprendre Le Web',
@@ -35,7 +35,7 @@ const BlogIndex = async () => {
             </Suspense>
           </div>
           <div className={styles.rightColumn}>
-            <RightMenu articles={articles}/>
+            <RightMenuArticles articles={articles}/>
           </div>
         </section>
       </main>

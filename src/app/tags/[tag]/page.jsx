@@ -1,7 +1,7 @@
 import styles from "../../page.module.css"
 import Articles from "../../../components/articles/Articles";
 import { Suspense } from "react";
-import RightMenu from "@/components/rightMenu/RightMenu";
+import RightMenuArticles from "@/components/rightMenu/RightMenuArticles";
 
 export const metadata = {
   title: 'Recherche par Tags | Apprendre Le Web',
@@ -30,16 +30,20 @@ export default async function page({params}) {
         })
     })
     return (
-            <main className={styles.mainInRow}>
-            <div className={styles.column}>
+            <main className={styles.main}>
               <h1 className={styles.h1}>Il y a {filtredArticles.length} articles contenant le tag <span style={{color:'#6d6dec'}}>{tag}</span> :</h1>
-              <Suspense fallback={<div className={styles.loadingContainer}><div className={styles.loadingEffect}></div></div>}>
-                <Articles articles={filtredArticles} />
-              </Suspense>
-            </div>
-            <div className={styles.rightColumn}>
-              <RightMenu articles={articles}/>
-            </div>
-          </main>
+                <div className={styles.mainInRow}>
+                  <div className={styles.column}>
+                    <Suspense fallback={<div className={styles.loadingContainer}><div className={styles.loadingEffect}></div></div>}>
+                      <Articles articles={filtredArticles} />
+                    </Suspense>
+                  </div>
+                  <div className={styles.rightColumn}>
+                    <RightMenuArticles articles={articles}/>
+                  </div>
+                </div>
+            </main>
+
+
         )
 }

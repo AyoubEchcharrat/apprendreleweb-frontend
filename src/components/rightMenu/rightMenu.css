@@ -19,6 +19,24 @@
     font-weight: 800;
 }
 
+[id^="id"] {
+    scroll-margin-top: 60px;
+}
+
+.right-menu-single-article{
+    padding: 15px 25px 15px 45px;
+}
+
+.right-menu-single-article li {
+    margin: 20px 0;
+    list-style-type: disclosure-closed;
+    color: #182f3b;
+}
+
+.right-menu-single-article li:hover {
+    color: rgb(38 117 112);
+}
+
 /* --- BLOC RIGHTS ARTICLES BREAKPOINTS --- */
 
 @media screen and (max-width:1480px) {
