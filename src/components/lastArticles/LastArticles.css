@@ -27,11 +27,12 @@
     align-items: center;
     border-radius: 10px;
     height: 150px;
-    width: 100%;
+    width: 350px;
+    position: relative;
 }
 
-.imageW100{
-    width: 100%;
+.imagecover{
+    object-fit: cover;
 }
 
 .section_title{

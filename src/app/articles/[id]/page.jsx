@@ -1,6 +1,7 @@
 import "./article.css"
 import styles from "../../page.module.css"
 import Link from "next/link"
+import Image from 'next/image'
 import GetModifAndDeletIfConnected from '@/components/article/GetModifAndDeletIfConnected'
 import '@/components/articles/articles.css'
 import RightMenuSingle from '@/components/rightMenu/RightMenuSingle'
@@ -51,7 +52,7 @@ export default async function page({params}) {
             data.content.charAt(0) === '#' ?
                 <div className='article'>
                     <div className={styles.column}>
-                        <div className="image_container"><img className="image_article" src={data.imageurl}/></div>
+                        <div className="image_container"><Image fill={true} className="image_article" src={data.imageurl}/></div>
                         <div className="content_article">
                             <Markdown 
                                 rehypePlugins={[rehypeHighlight]}

@@ -2,6 +2,7 @@ import Link from "next/link"
 import "./LastArticles.css"
 import "../articles/articles.css"
 import ResumeArticles from '../ResumeArticles.jsx'
+import Image from 'next/image'
 
 async function getArticles() {
   const res = await fetch(`https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/articles/?timestamp=${Date.now()}`, { cache: 'no-store' })
@@ -38,7 +39,7 @@ export default async function LastArticles() {
                     <div key={`${index}-article-home`} className="container_lastarticle">
                       <Link href={`/articles/${article._id}`}>
                         <div className="image_lastarticle">
-                          <img className="imageW100" src={article.imageurl} alt="" />
+                          <Image fill={true} className="imagecover" src={article.imageurl} alt="" />
                         </div>
                       </Link>
                       <div className="text-container_articles">
