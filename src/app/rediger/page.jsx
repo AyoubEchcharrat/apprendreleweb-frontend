@@ -40,8 +40,8 @@ export default function App() {
     const content = e.target.elements.content.value
     const tags = e.target.elements.tags.value.split(',')
     const imageurl = e.target.elements.imageurl.value
-
-    const objectArticle = {title,content,tags,imageurl,date}
+    const introduction = e.target.elements.introduction.value
+    const objectArticle = {title,content,tags,imageurl,date,introduction}
     sendArticle(objectArticle,userToken)
     .then(() => {
       setLoading(false)

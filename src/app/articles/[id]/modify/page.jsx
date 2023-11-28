@@ -75,8 +75,8 @@ export default function Modify() {
       const content = e.target.elements.content.value
       const tags = e.target.elements.tags.value.split(',')
       const imageurl = e.target.elements.imageurl.value
-      
-      const objectArticle = {title,content,tags,imageurl,date}
+      const introduction = e.target.elements.introduction.value
+      const objectArticle = {title,content,tags,imageurl,date,introduction}
 
       sendModif(objectArticle,userToken,currentArticleId)
       .then(()=> {  
