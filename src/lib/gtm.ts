@@ -5,7 +5,7 @@ type WindowWithDataLayer = Window & {
   
   declare const window: WindowWithDataLayer
   
-  export const GTM_ID = "G-1D3SX2YGSG"
+  export const GTM_ID = "GTM-KV4KG95R"
   
   export const pageview = (url: string) => {
     if (typeof window.dataLayer !== "undefined") {
