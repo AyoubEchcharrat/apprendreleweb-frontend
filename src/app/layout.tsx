@@ -5,7 +5,8 @@ const inter = Inter({ subsets: ['latin'] })
 import './layout.css'
 import LayoutConnexion from './LayoutConnexion'
 import { Providers } from "@/redux/provider";
-
+import { Suspense } from 'react'
+import Analytics from "@/components/Analytics"
 
 export const metadata = {
   title: 'Apprendre Le Web',
@@ -20,6 +21,9 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={inter.className}>
+        <Suspense>
+          <Analytics /> {/* gtag */}
+        </Suspense>
         <Providers>
           <header className='header'>
             <div className="simulate-bloc">
