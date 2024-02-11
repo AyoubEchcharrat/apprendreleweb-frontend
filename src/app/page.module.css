@@ -7,7 +7,7 @@
   background: #fbfbfb;
 }
 
-.mainInRow{
+.mainInRow {
   display: flex;
   flex-direction: row;
   padding: 1rem 0;
@@ -17,15 +17,14 @@
   border-top: solid #d8d8d8 1px;
 }
 
-.column{
+.column {
   width: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
-.rightColumn{
+.rightColumn {
   width: 30%;
   position: relative;
   display: flex;
@@ -33,43 +32,39 @@
   align-items: flex-start;
 }
 
-.h1{
+.h1 {
   margin: 35px auto;
   font-size: 34px;
-  font-family: 'Ubuntu';
+  font-family: "Ubuntu";
   color: #333;
   width: fit-content;
-
 }
 
-.FirstBlocPage{
+.FirstBlocPage {
   padding: 40px 20px 30px;
 }
 
-.paragrapheHeadline{
+.paragrapheHeadline {
   font-size: 17px;
   text-align: center;
   line-height: 1.7;
   max-width: 900px;
   color: #6d6d6d;
-  font-family: 'Lato';
+  font-family: "Lato";
   font-weight: 400;
 }
 
-@media screen and (max-width:1280px) {
-  .h1{
+@media screen and (max-width: 1280px) {
+  .h1 {
     margin: 15px auto;
     font-size: 24px;
   }
-  .paragrapheHeadline{
+  .paragrapheHeadline {
     font-size: 14px;
   }
-
 }
 
-
-
-.articletitle{
+.articletitle {
   padding: 10px 15px 20px 15px;
 }
 
@@ -78,7 +73,7 @@
   font-family: var(--font-mono);
 }
 
-.loadingContainer{
+.loadingContainer {
   width: 100vw;
   height: 200px;
   display: flex;
@@ -86,12 +81,12 @@
   align-items: center;
 }
 
-.loadingEffect{
+.loadingEffect {
   width: 40px;
   height: 40px;
-  border:solid 3px rgb(54, 4, 4);
+  border: solid 3px rgb(54, 4, 4);
   border-color: transparent rgb(54, 4, 4) transparent rgb(54, 4, 4);
-  border-radius:25px;
+  border-radius: 25px;
   animation: spin 2s linear infinite;
 }
 
@@ -106,18 +101,18 @@
 
 /* --- Home (BANNER) --- */
 
-.home{
+.home {
   max-width: 100vw;
   overflow-x: hidden;
-  padding-top:59px;
+  padding-top: 59px;
   min-height: 100vh;
   background: #ffffff;
-  background: linear-gradient(0deg,#ffffff,#f8f8f8);
+  background: linear-gradient(0deg, #ffffff, #f8f8f8);
 }
 
-.firstcontenthome{
+.firstcontenthome {
   height: 270px;
-  background-color: #BD1313;
+  background-color: #bd1313;
   position: relative;
   justify-content: center;
   align-items: flex-start;
@@ -125,25 +120,28 @@
   flex-direction: column;
   padding: 50px 190px;
   z-index: 4;
-  background: linear-gradient(195deg,#43875070, rgb(0 0 0 / 0%)), radial-gradient(circle at -50% 73%, rgb(4 66 66 / 88%), rgba(0,0,0,0)), linear-gradient(224deg, rgb(255 237 0 / 35%), rgba(255,255,255,0)), url(/noise.svg);
+  background: linear-gradient(195deg, #43875070, rgb(0 0 0 / 0%)),
+    radial-gradient(circle at -50% 73%, rgb(4 66 66 / 88%), rgba(0, 0, 0, 0)),
+    linear-gradient(224deg, rgb(255 237 0 / 35%), rgba(255, 255, 255, 0)),
+    url(/noise.svg);
   overflow: hidden;
 }
 
-.headlinehome{
-  color:#FFDE9D;
-  font-size:64px;
+.headlinehome {
+  color: #ffde9d;
+  font-size: 64px;
   z-index: 1;
   margin-bottom: 10px;
   font-family: monospace;
 }
-.sublinehome{
-  color:#FFDE9D;
-  font-size:18px;
+.sublinehome {
+  color: #ffde9d;
+  font-size: 18px;
   z-index: 1;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
 }
 
-.lineanimationx{
+.lineanimationx {
   border-top: dashed silver 1px;
   width: 162px;
   position: absolute;
@@ -154,10 +152,10 @@
   justify-content: center;
   user-select: none;
   pointer-events: none;
-  color:rgb(223, 223, 223);
+  color: rgb(223, 223, 223);
   padding-top: 4px;
 }
-.lineanimationy1{
+.lineanimationy1 {
   border-left: dashed silver 1px;
   height: 98px;
   position: absolute;
@@ -169,12 +167,12 @@
   padding: 4px;
   user-select: none;
   pointer-events: none;
-  color:rgb(223, 223, 223)
+  color: rgb(223, 223, 223);
 }
 
 /* --- HOME (PRESENTATION) --- */
 
-.presentation{
+.presentation {
   margin: 20px auto;
   max-width: 1280px;
   display: flex;
@@ -188,38 +186,38 @@
   background: #fbfbfb;
   box-shadow: 0px 14px 50px -45px black;
 }
-.partLeft{
-width: 68%;
+.partLeft {
+  width: 68%;
 }
 
-.partRight{
+.partRight {
   width: 10%;
   display: flex;
   justify-content: center;
   height: 500px;
 }
 
-.imagePresentation{
+.imagePresentation {
   position: relative;
   top: -0px;
   animation: godown infinite 15s linear;
 }
 
 @keyframes godown {
-  from{
+  from {
     top: -500px;
   }
-  to{
-    top:-000px
+  to {
+    top: -000px;
   }
 }
 
-.illuPresentation{
+.illuPresentation {
   position: relative;
   top: -230px;
   animation: upndown alternate infinite 2s ease-in-out;
 }
-.illuShadowPresentation{
+.illuShadowPresentation {
   filter: blur(50px);
   transform: translateY(58px);
   position: absolute;
@@ -229,39 +227,38 @@ width: 68%;
 }
 
 @keyframes upndown {
-  from{
-    transform: translateY(10px)
+  from {
+    transform: translateY(10px);
   }
 }
 
-.planetimagehome{
+.planetimagehome {
   mix-blend-mode: multiply;
   right: -198px;
   top: -219px;
   transform: rotate(345deg);
   position: absolute;
-  z-index:0;
+  z-index: 0;
   user-select: none;
   pointer-events: none;
 }
 
-@media screen and (max-width:990px) {
-  .newpartRight{
+@media screen and (max-width: 990px) {
+  .newpartRight {
     display: none;
   }
 }
 
-
-.titlePresentation{
+.titlePresentation {
   font-size: 48px;
   color: #333;
   line-height: 1;
   padding-bottom: 20px;
   font-weight: 800;
-  font-family: 'Ubuntu';
+  font-family: "Ubuntu";
 }
 
-.sublinePresentation{
+.sublinePresentation {
   font-size: 24px;
   color: #333;
   line-height: 1;
@@ -270,58 +267,57 @@ width: 68%;
   letter-spacing: 0.3px;
 }
 
-.paragraph{
+.paragraph {
   font-size: 16px;
   color: #6e6e6e;
   line-height: 1.7;
   padding-bottom: 15px;
-  font-family: 'Lato';
+  font-family: "Lato";
 }
-
 
 /* BREAKPOINTS */
 
-@media screen and (max-width:1330px) {
-  .illuPresentation{
+@media screen and (max-width: 1330px) {
+  .illuPresentation {
     top: -248px;
-    scale: .7;
+    scale: 0.7;
   }
-  .illuShadowPresentation{
-    scale: .7;
+  .illuShadowPresentation {
+    scale: 0.7;
   }
-  .planetimagehome{
+  .planetimagehome {
     right: -370px;
     top: -230px;
   }
-  .firstcontenthome{
+  .firstcontenthome {
     height: 200px;
     justify-content: center;
     align-items: center;
     padding: 30px;
   }
-  .headlinehome{
-    font-size:25px;
+  .headlinehome {
+    font-size: 25px;
   }
-  .sublinehome{
-    font-size:12px;
+  .sublinehome {
+    font-size: 12px;
   }
-  .titlePresentation{
+  .titlePresentation {
     font-size: 34px;
   }
-  .sublinePresentation{
+  .sublinePresentation {
     font-size: 20px;
   }
-  .paragraph{
+  .paragraph {
     font-size: 14px;
     text-align: justify;
   }
-  .partRight{
+  .partRight {
     height: 400px;
   }
 }
 
-@media screen and (max-width:1200px) {
-  .partRight{
+@media screen and (max-width: 1200px) {
+  .partRight {
     display: none;
   }
   .main {
@@ -329,75 +325,72 @@ width: 68%;
   }
 }
 
-@media screen and (max-width:990px) {
-
-  .catimagehome{
-    right:0
+@media screen and (max-width: 990px) {
+  .catimagehome {
+    right: 0;
   }
-  .partLeft{
+  .partLeft {
     width: 90%;
   }
-  .titlePresentation{
+  .titlePresentation {
     font-size: 28px;
   }
 }
 
-@media screen and (max-width:930px) {
-.column{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-}
+@media screen and (max-width: 930px) {
+  .column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.rightColumn{
-  display: none;
-}
-}
-
-
-@media screen and (max-width:690px) {
-  .h1{
-    font-size:16px;
-    margin:30px auto 10px;
+  .rightColumn {
+    display: none;
   }
 }
 
-@media screen and (max-width:590px) {
-  .firstcontenthome{
+@media screen and (max-width: 690px) {
+  .h1 {
+    font-size: 16px;
+    margin: 30px auto 10px;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .firstcontenthome {
     height: 200px;
     justify-content: center;
     align-items: center;
     padding: 30px;
   }
-  .headlinehome{
-    font-size:14px;
+  .headlinehome {
+    font-size: 14px;
   }
-  .sublinehome{
-    font-size:10px;
-    padding:0px;
+  .sublinehome {
+    font-size: 10px;
+    padding: 0px;
   }
   .main {
     padding: 6rem 1rem;
   }
-  .mainInRow{
+  .mainInRow {
     padding: 2rem 0rem;
   }
-  .titlePresentation{
-    font-size: 19px;
+  .titlePresentation {
+    font-size: 23px;
   }
-  .sublinePresentation{
-    font-size: 14px;
+  .sublinePresentation {
+    font-size: 17px;
     padding-bottom: 13px;
   }
-  .paragraph{
+  .paragraph {
     font-size: 12px;
   }
 }
 
-@media screen and (max-width:315px) {
-  .partLeft{
+@media screen and (max-width: 315px) {
+  .partLeft {
     margin-top: 45px;
   }
 }
