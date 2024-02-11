@@ -26,7 +26,7 @@ const Page = () => {
       <Section
         title={"Où me retrouver ?"}
         content={
-          "Mes contacts directs sont disponibles sur mon site <a href=\"ayoub-echcharrat.fr\">ayoub-echcharrat.fr</a> ! Vous pouvez m'ajouter sur Linkedin et également voir mes projets sur GitHub. N'hésitez pas à me contacter, nous pourions discuter de vos projets autour d'un chocolat chaud."
+          "Mes contacts directs sont disponibles sur mon site ayoub-echcharrat.fr ! Vous pouvez m'ajouter sur Linkedin et également voir mes projets sur GitHub. N'hésitez pas à me contacter, nous pourions discuter de vos projets autour d'un chocolat chaud."
         }
       />
     </main>
