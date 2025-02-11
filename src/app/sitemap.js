@@ -1,6 +1,6 @@
 async function getArticles() {
 	try {
-		const res = await fetch(`https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/articles`, {
+		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/articles`, {
 			cache: "no-store",
 		});
 		if (!res.ok) {
