@@ -11,12 +11,11 @@ export default function LayoutConnexion() {
   const dispatch = useAppDispatch();
   const [isClient, setIsClient] = useState(false);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
-  const [screenSize, setScreenSize] = useState(window.innerWidth);
+  const [screenSize, setScreenSize] = useState(1600);
   const [isCheckTrue, setIsCheckTrue] = useState(false);
 
   useEffect(() => {
-    const checkUserToken = async () => {
-      if (!userToken) return;
+    const check = async (userToken: string) => {
       try {
         const res = await fetch(
           `${process.env.NEXT_PUBLIC_API_URL}/api/auth/check`,
@@ -28,99 +27,129 @@ export default function LayoutConnexion() {
             },
           }
         );
-        setIsCheckTrue(res.status === 200);
-        if (res.status === 401) dispatch(logout());
-      } catch (error) {
-        console.error("Error checking auth status:", error);
+
+        if (res.status === 200) {
+          setIsCheckTrue(true);
+        }
+
+        if (res.status === 401) {
+          dispatch(logout());
+          setIsCheckTrue(false);
+        }
+      } catch {
+        return Error;
       }
     };
-    checkUserToken();
-  }, [userToken, dispatch]);
-
-  useEffect(() => {
-    if (!dataLoad) {
-      dispatch(refreshUserDatas());
+    if (userToken) {
+      check(userToken);
     }
-    setIsClient(true);
-  }, [dataLoad, dispatch]);
-
-  useEffect(() => {
-    const handleResize = () => setScreenSize(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const handleLogout = () => {
-    dispatch(logout());
-    setIsCheckTrue(false);
+  useEffect(() => {}, [dispatch]);
+
+  useEffect(() => {
+    if (dataLoad === false) {
+      dispatch(() => refreshUserDatas());
+      window.location.reload();
+    }
+    setIsClient(true);
+  }, [dataLoad, dispatch, setIsClient]);
+
+  const handleMenu = (action: boolean) => {
+    setIsOpenMenu(action);
   };
+
+  useEffect(() => {
+    setScreenSize(window.innerWidth);
+    const handleResize = () => {
+      setScreenSize(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div className="rightBloc">
       {screenSize > 1200 ? (
-        <div className="blocConnected">
-          <Link href="/about">À propos</Link>
-          {isCheckTrue ? (
-            <>
-              <Link href="/rediger">Rédiger</Link>
-              <Link href="/" onClick={handleLogout}>
-                Déconnexion
-              </Link>
-            </>
-          ) : (
-            <Link className="simulate-bloc" href="/connexion">
-              Connexion
-            </Link>
-          )}
+        <div>
+          {
+            /* (isClient && userToken == null ) && */ isCheckTrue === false ? (
+              <div className="blocConnected">
+                <Link href={"/about"}>À propos</Link>
+                <Link className="simulate-bloc" href={"/connexion"}>
+                  Connexion
+                </Link>
+              </div>
+            ) : (
+              <div className="blocConnected">
+                <Link href={"/about"}>À propos</Link>
+                <Link href={"/rediger"}>Rédiger</Link>
+                <Link href="/" onClick={() => dispatch(logout())}>
+                  Deconnexion
+                </Link>
+              </div>
+            )
+          }
         </div>
       ) : (
         <div>
           {isOpenMenu ? (
             <div className="overlay_shadow_menu">
               <div
-                onClick={() => setIsOpenMenu(false)}
+                onClick={() => handleMenu(false)}
                 className="responsive_menu_CLOSE"
               >
                 <div className="cross_menu cross_menu_1"></div>
                 <div className="cross_menu cross_menu_2"></div>
               </div>
               <div className="background_menu">
-                <div className="blocConnected">
-                  <Link onClick={() => setIsOpenMenu(false)} href="/">
-                    Page d&apos;accueil
-                  </Link>
-                  <Link onClick={() => setIsOpenMenu(false)} href="/articles">
-                    Articles
-                  </Link>
-                  <Link onClick={() => setIsOpenMenu(false)} href="/about">
-                    À propos
-                  </Link>
-                  {isCheckTrue ? (
-                    <>
-                      <Link
-                        onClick={() => setIsOpenMenu(false)}
-                        href="/rediger"
-                      >
-                        Rédiger
-                      </Link>
-                      <Link href="/" onClick={handleLogout}>
-                        Déconnexion
-                      </Link>
-                    </>
-                  ) : (
-                    <Link
-                      onClick={() => setIsOpenMenu(false)}
-                      href="/connexion"
-                    >
+                {isClient && userToken == null ? (
+                  <div className="blocConnected">
+                    <Link onClick={() => handleMenu(false)} href={"/"}>
+                      Page d&apos;accueil
+                    </Link>
+                    <Link onClick={() => handleMenu(false)} href={"/articles"}>
+                      Articles
+                    </Link>
+                    <Link onClick={() => handleMenu(false)} href={"/about"}>
+                      À propos
+                    </Link>
+                    <Link onClick={() => handleMenu(false)} href={"/connexion"}>
                       Connexion
                     </Link>
-                  )}
-                </div>
+                  </div>
+                ) : (
+                  <div className="blocConnected">
+                    <Link onClick={() => handleMenu(false)} href={"/"}>
+                      Page d&apos;accueil
+                    </Link>
+                    <Link onClick={() => handleMenu(false)} href={"/articles"}>
+                      Articles
+                    </Link>
+                    <Link onClick={() => handleMenu(false)} href={"/about"}>
+                      À propos
+                    </Link>
+                    <Link onClick={() => handleMenu(false)} href={"/rediger"}>
+                      Rédiger
+                    </Link>
+                    <Link
+                      href="/"
+                      onClick={() => {
+                        dispatch(logout());
+                        handleMenu(false);
+                      }}
+                    >
+                      Deconnexion
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
           ) : (
             <div
-              onClick={() => setIsOpenMenu(true)}
+              onClick={() => handleMenu(true)}
               className="responsive_menu_OPEN"
             >
               <div className="bar_menu"></div>
