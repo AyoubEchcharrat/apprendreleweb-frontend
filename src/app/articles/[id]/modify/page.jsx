@@ -15,7 +15,7 @@ async function sendModif(article, userToken, currentArticleId) {
 			},
 		};
 		const data = await axios.put(
-			`https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/articles/${currentArticleId}`,
+			`${process.env.NEXT_PUBLIC_API_URL}/api/articles/${currentArticleId}`,
 			article,
 			config
 		);
@@ -32,7 +32,7 @@ async function deleteArticle(userToken, currentArticleId) {
 			},
 		};
 		const data = await axios.delete(
-			`https://apprendreleweb-backend-61895b6b6b58.herokuapp.com/api/articles/${currentArticleId}`,
+			`${process.env.NEXT_PUBLIC_API_URL}/api/articles/${currentArticleId}`,
 			config
 		);
 		return data;
