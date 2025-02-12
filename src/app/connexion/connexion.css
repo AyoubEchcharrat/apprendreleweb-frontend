@@ -1,16 +1,20 @@
 form.connexion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 input.connexion {
-    width: 220px;
-    height: 40px;
-    padding: 5px;
-    border: none;
-    border-bottom: 1px solid black;
-    margin-bottom: 10px;
-    background-color: inherit;
-    font-family: 'Lato';
+  width: 220px;
+  height: 40px;
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+  background-color: inherit;
+  font-family: "Lato";
+}
+
+input {
+  color: #2b2b2b;
 }
