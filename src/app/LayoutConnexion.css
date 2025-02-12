@@ -1,76 +1,80 @@
 .rightBloc {
-	width: 20%;
-	display: flex;
-	justify-content: end;
+  width: 20%;
+  display: flex;
+  justify-content: end;
 }
 
 @media screen and (max-width: 1200px) {
-	.responsive_menu_CLOSE {
-		position: absolute;
-		right: 15px;
-		top: 21px;
-		color: white;
-		z-index: 5;
-	}
+  .rightBloc {
+    width: 0;
+  }
 
-	.responsive_menu_OPEN {
-		position: absolute;
-		right: 15px;
-		top: 20px;
-		color: rgb(44, 44, 44);
-		z-index: 5;
-	}
+  .responsive_menu_CLOSE {
+    position: absolute;
+    right: 15px;
+    top: 21px;
+    color: white;
+    z-index: 5;
+  }
 
-	.overlay_shadow_menu {
-		width: 100vw;
-		height: 100vh;
-		position: absolute;
-		background-color: #0000005e;
-		right: 0;
-		top: 0;
-	}
+  .responsive_menu_OPEN {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    color: rgb(44, 44, 44);
+    z-index: 5;
+  }
 
-	.background_menu {
-		width: 50vw;
-		height: 100vh;
-		background-color: #2323238a;
-		position: absolute;
-		right: 0;
-		top: 0;
-		color: white;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-	.blocConnected {
-		display: flex;
-		flex-direction: column;
-	}
+  .overlay_shadow_menu {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: #0000005e;
+    right: 0;
+    top: 0;
+  }
 
-	.blocConnected * {
-		margin: 10px 0;
-		font-size: 14px;
-		padding: 0;
-		text-align: right;
-	}
-	.bar_menu {
-		width: 32px;
-		height: 4px;
-		background-color: #353535;
-		margin: 4px 0;
-		border-radius: 5px;
-	}
-	.cross_menu {
-		width: 32px;
-		height: 4px;
-		background-color: white;
-		margin: 4px 0;
-		border-radius: 5px;
-	}
-	.cross_menu_1 {
-		transform: rotate(45deg) translate(6px);
-	}
-	.cross_menu_2 {
-		transform: rotate(-45deg) translate(5px);
-	}
+  .background_menu {
+    width: 50vw;
+    height: 100vh;
+    background-color: #ffffff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: white !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .blocConnected {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blocConnected * {
+    margin: 10px 0;
+    font-size: 14px;
+    padding: 0;
+    text-align: right;
+  }
+  .bar_menu {
+    width: 32px;
+    height: 4px;
+    background-color: #353535;
+    margin: 4px 0;
+    border-radius: 5px;
+  }
+  .cross_menu {
+    width: 32px;
+    height: 4px;
+    background-color: white;
+    margin: 4px 0;
+    border-radius: 5px;
+  }
+  .cross_menu_1 {
+    transform: rotate(45deg) translate(6px);
+  }
+  .cross_menu_2 {
+    transform: rotate(-45deg) translate(5px);
+  }
 }
